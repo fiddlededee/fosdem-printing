@@ -43,6 +43,7 @@ import java.util.*
 import kotlin.io.path.Path
 import kotlin.io.path.createDirectory
 import com.helger.css.reader.CSSReader
+import model.Col
 import model.Heading
 import model.Table
 import model.Toc
@@ -150,17 +151,18 @@ val makeOd = tasks.register("makeOD") {
             }.first().also { it.insertBefore(makeTitle(it)) }.remove() // <1>
             // end::orchestration-rebuild-title[]
             // tag::orchestration-other[]
-            ast().descendant { it.roles.contains("notes") } // <2>
+            ast().descendant { it.roles.contains("notes") } // <1>
                 .forEach { it.insertBefore(HorizontalLine()) }
             ast().descendant { it is Heading && it.level > 1 }
                 .forEach {
                     it.insertBefore(
                         Paragraph().apply { roles("slide-finish") }
                     )
-                } // <3>
+                } // <2>
             odtStyleList.add(odtStyles())
-            odtStyleList.add(rougeStyles()) // <4>
+            odtStyleList.add(rougeStyles()) // <3>
             // end::orchestration-other[]
+            // bad decision to take Reveal.js as source for HTML, but safety margin of the approach allows
             arrayOf("fa-lightbulb-o" to "Tip", "fa-warning" to "Warning")
                 .forEach { mapUnit ->
                     ast().descendant { it.roles.contains(mapUnit.first) }.forEach {
@@ -168,15 +170,36 @@ val makeOd = tasks.register("makeOD") {
                         it.remove()
                     }
                 }
-            File("${project.projectDir}/${presentationFile}-preprint.html").writeText(html())
+            // Ha! Order matters, interesting to check OD specification
+            ast().descendant { it is Table && (it.parent()?.roles?.contains("colist") ?: false) }
+                .map { it as Table }.forEach {
+                    it.children().first()
+                        .apply { arrayOf(8F, 162F).forEach { insertBefore(Col(Length(it))) } }
+                }
+            File("${project.projectDir}/output/${presentationFile}-prenote.html").writeText(html())
             // tag::boiler-plate-2[]
             ast2fodt()
             File("${project.projectDir}/output/ast.yaml").writeText(ast().toYamlString())
-            File("${project.projectDir}/output/$presentationFile-v$version.fodt").writeText(fodt())
+            File("${project.projectDir}/output/$presentationFile-notes-v$version.fodt").writeText(fodt())
         }
         // end::boiler-plate-2[]
     }
 }
+
+val fodt2All = tasks.register<Exec>("Fodt2All") {
+    group = "talk"
+    description = "Converts notes from FODT (LibreOffice) to all formats, needs FODT file, created with ${makeOd.name}, needs LibreOffice and Kotlin installed"
+    commandLine(
+        "kotlin",
+        "lo-kts-converter.main.kts",
+        "-i",
+        "output/fosdem-printing-notes-v1.0.1.fodt",
+        "-f",
+        "pdf,docx,odt"
+    )
+
+}
+
 
 class AsciidocHtmlFactory {
     private val factory: Asciidoctor = Factory.create()
@@ -301,7 +324,6 @@ fun saveToPdf(params: String, suffix: String) {
 }
 
 
-
 // tag::defining-custom-element[]
 class HorizontalLine() : NoWriterNode() {
     override val isInline: Boolean get() = false
@@ -341,7 +363,7 @@ fun odtStyles(): OdtStyleList = OdtStyleList(
         }
     },
     // end::custom-element[]
-    OdtStyle { p->
+    OdtStyle { p ->
         if (p !is Paragraph) return@OdtStyle
         if (p.ancestor { it.roles.contains("title-photo") }.isEmpty()) return@OdtStyle
         paragraphProperties { attributes("fo:text-align" to "start") }
@@ -398,7 +420,7 @@ fun makeTitle(sourceNode: Node): Node {
 }
 
 fun rougeStyles(): OdtStyleList {
-    val css = CSSReader.readFromFile( File("${project.projectDir}/syntax.css") )
+    val css = CSSReader.readFromFile(File("${project.projectDir}/syntax.css"))
 
     val rougeStyles = css?.allStyleRules?.flatMap { styleRule ->
         styleRule.allSelectors.flatMap { selector ->
@@ -435,6 +457,7 @@ fun rougeStyles(): OdtStyleList {
 fun unknownTagProcessingRuleRevealJs(): HtmlNode.() -> UnknownTagProcessing = {
     if (classNames().intersect(
             setOf(
+                "colist",
                 "listingblock",
                 "admonitionblock",
                 "exampleblock",

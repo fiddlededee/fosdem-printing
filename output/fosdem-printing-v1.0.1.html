@@ -749,7 +749,7 @@ pre.rouge {
         <li class="fragment">
          <p>With linefeed and spaces? And how to copy?</p></li>
         <li class="fragment">
-         <p>With indents? Still impossible to copy from PDF?</p></li>
+         <p>With indents? Still impossible to copy from PDF</p></li>
        </ul>
       </div>
       <div class="admonitionblock tip fragment">
@@ -766,13 +766,13 @@ pre.rouge {
        <div class="ulist">
         <ul>
          <li>
-          <p>There is the core mismatch: semantical markup meets the rigid world of print.</p></li>
+          <p>There is the core mismatch: semantic markup meets the rigid world of print.</p></li>
          <li>
           <p>Take a simple listing…​ (go through very briefly just to give filling)</p>
           <div class="ulist">
            <ul>
             <li>
-             <p>Stop on orientation — it is already not about semantical markup. Should tech writer use media hints?</p></li>
+             <p>Stop on orientation — it is already not about semantic markup. Landscape for listing, for section, for higher level section? Should tech writer use media hints?</p></li>
            </ul>
           </div></li>
          <li>
@@ -787,37 +787,9 @@ pre.rouge {
       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
      </div>
     </section>
-    <section id="a50">
-     <h2>3. UniDoc Publisher approach suits best if at least <code>one of</code></h2>
-     <div class="slide-content">
-      <div class="ulist">
-       <ul>
-        <li>
-         <p>You don’t prepare documentation especially for printing purposes</p></li>
-        <li>
-         <p>You are automating documentation generation and hope it will look good, no matter what will be generated</p></li>
-        <li>
-         <p>You output format is one of text processing format</p></li>
-       </ul>
-      </div>
-      <aside class="notes">
-       <div class="ulist">
-        <ul>
-         <li>
-          <p>First point is usually true if inputs — Simple markup/Wiki, main means of publication — HTML or static site</p></li>
-        </ul>
-       </div>
-      </aside>
-     </div>
-     <div class="twd1">
-      <div>
-       Why our HTML Docs don’t just Print and&nbsp;what to do about it
-      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-     </div>
-    </section>
     <section>
      <section id="a17">
-      <h2>4. Main formats for printing</h2>
+      <h2>3. Main formats for printing</h2>
       <div class="slide-content">
        <div class="olist arabic">
         <ol class="arabic">
@@ -843,7 +815,7 @@ pre.rouge {
         <div class="ulist">
          <ul>
           <li>
-           <p>Despite we live with Paged Media CSS for almost 15 years, HTML — still poor browser support, usually used via PDF. HTML for printing is intermediary format. There is a great open source solutions to convert it to PDF — Weasy Print and a number of a very good non opensource solutions. But still HTML is an intermediate format</p></li>
+           <p>Despite we live with Paged Media CSS for almost 15 years, HTML — still poor browser support, usually used via PDF. HTML for printing is intermediary format. There is a great open source solutions to convert it to PDF — WeasyPrint and a number of a very good non opensource solutions. But still HTML is an intermediary format</p></li>
           <li>
            <p>If somebody interested, probably most well-known are Antenna Publisher, Oxygen (the letter we used 20 years ago for authoring DocBook and converting to PDF via TeX)</p></li>
          </ul>
@@ -857,7 +829,7 @@ pre.rouge {
       </div>
      </section>
      <section id="a2">
-      <h2>4.1. Most widespread rendering approaches</h2>
+      <h2>3.1. Most widespread rendering approaches</h2>
       <div class="slide-content">
        <div class="ulist">
         <ul>
@@ -866,7 +838,7 @@ pre.rouge {
          <li class="fragment">
           <p>PDF ← XSL-FO with FOP-processors</p></li>
          <li class="fragment">
-          <p>PDF ← via TeX (sometimes via TeXML and then TeX)</p></li>
+          <p>PDF ← via TeX</p></li>
          <li class="fragment">
           <p>PDF ← HTML + Paged Media CSS</p></li>
          <li class="fragment">
@@ -900,13 +872,11 @@ pre.rouge {
         <div class="ulist">
          <ul>
           <li>
-           <p>Documentation of UniDoc Publisher is created with Asciidoctor and is published with WeasyPrint, XSL-FO and Open Document toolchains. Looks pretty the same. But just as a proof of concept</p></li>
+           <p>There are others, but I estimate these as 99% of all</p></li>
+          <li>
+           <p>You can see Leader Problems in UniDoc Publisher documentation</p></li>
           <li>
            <p>Native libraries examples: ReportLab in Python, Prawn in Ruby, PDFBox in Java</p></li>
-          <li>
-           <p>Some FOP processors Apache FOP, XEP</p></li>
-          <li>
-           <p>If we have time we’ll compare, there is a slide at the end</p></li>
           <li>
            <p>(if somebody needs reference) <a href="https://support.microsoft.com/en-us/topic/considerations-for-server-side-automation-of-office-48bcfe93-8a89-47f1-0bce-017433ad79e2" class="bare">https://support.microsoft.com/en-us/topic/considerations-for-server-side-automation-of-office-48bcfe93-8a89-47f1-0bce-017433ad79e2</a></p></li>
          </ul>
@@ -926,7 +896,7 @@ pre.rouge {
      </div>
     </section>
     <section id="_some_brief_conclusions">
-     <h2>5. Some brief conclusions</h2>
+     <h2>4. Some brief conclusions</h2>
      <div class="slide-content">
       <div class="admonitionblock warning fragment">
        <table>
@@ -957,12 +927,40 @@ pre.rouge {
       </div>
       <aside class="notes">
        <div class="paragraph">
-        <p>Two speleologist meet in a narrow adit. I’m from a dead end. Great, I’m too!</p>
+        <p>Two speleologist meet in a narrow tunnel. I’m from a dead end. I’m too!</p>
        </div>
        <div class="ulist">
         <ul>
          <li>
-          <p>Documentation of Unidoc Publisher is created with Asciidoctor is published with WeasyPrint, XSL-FO and Open Document toolchains. Looks pretty the same. But just as a proof of concept</p></li>
+          <p>Documentation of UniDoc Publisher is created with Asciidoctor is published with WeasyPrint, XSL-FO and Open Document toolchains. Looks pretty the same. But just as a proof of concept</p></li>
+        </ul>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs don’t just Print and&nbsp;what to do about it
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a50">
+     <h2>5. UniDoc Publisher approach suits best if at least <code>one of</code></h2>
+     <div class="slide-content">
+      <div class="ulist">
+       <ul>
+        <li>
+         <p>You don’t prepare documentation especially for printing purposes</p></li>
+        <li>
+         <p>You are automating documentation generation and hope it will look good, no matter what will be generated</p></li>
+        <li>
+         <p>You output format is one of text processing format</p></li>
+       </ul>
+      </div>
+      <aside class="notes">
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>First point is usually true if inputs — Simple markup/Wiki, main means of publication — HTML or static site</p></li>
         </ul>
        </div>
       </aside>
@@ -985,7 +983,7 @@ pre.rouge {
          <div class="olist arabic">
           <ol class="arabic">
            <li class="fragment">
-            <p>Asciidoctor parses markup into AST</p></li>
+            <p>Asciidoctor parses markup into AST (Abstract Syntax Tree)</p></li>
            <li class="fragment">
             <p>You may transform AST with Asciidoctor AST processing</p></li>
            <li class="fragment">
@@ -1064,8 +1062,13 @@ pre.rouge {
         </tbody>
        </table>
        <aside class="notes">
-        <div class="paragraph">
-         <p>get_basic_style — is some external function, defined as a helper</p>
+        <div class="ulist">
+         <ul>
+          <li>
+           <p>dash means code in Ruby</p></li>
+          <li>
+           <p>get_basic_style — is some external function, defined as a helper, so Ruby can be used withing template</p></li>
+         </ul>
         </div>
        </aside>
       </div>
@@ -1163,7 +1166,7 @@ pre.rouge {
           <li>
            <p>But we have example of Pandoc that places heavy attention on AST transformation. There is even <a href="https://github.com/jgm/pandocfilters">pandocfilter</a> project, that simplifies AST transformation for Python. I think the world meta-converter quite fits Pandoc. But using own converters raises compatibility issues and no special styling approach.</p></li>
           <li>
-           <p>Although this circus is glued with docker, my experiments showed, that gluing with Gradle is much more controllable. Yes, finally it would be docker.. but at the very end</p></li>
+           <p>Although this circus is glued with docker, my experiments showed, that gluing with Gradle is much more controllable. Yes, finally it would be docker. but at the very end</p></li>
          </ul>
         </div>
        </aside>
@@ -1227,7 +1230,7 @@ pre.rouge {
         <tbody>
          <tr>
           <td class="icon"><i class="fa fa-lightbulb-o" title="Tip"></i></td>
-          <td class="content">Each converter outputs HTML. HTML is quite semantical, why shouldn’t we use it?</td>
+          <td class="content">Each converter outputs HTML. HTML is quite semantic, why shouldn’t we use it?</td>
          </tr>
         </tbody>
        </table>
@@ -1245,6 +1248,11 @@ pre.rouge {
       <div class="imageblock">
        <img src="images/slide-1-to-print.png" alt="slide 1 to print" width="65%">
       </div>
+      <aside class="notes">
+       <div class="paragraph">
+        <p>This presentation as is shown in Ivan Ponomarev talk is created with Asciidoctor, so we can convert it to document with notes</p>
+       </div>
+      </aside>
      </div>
      <div class="twd1">
       <div>
@@ -1285,7 +1293,7 @@ pre.rouge {
         <span class="c1">// Processing AST</span>
     <span class="nf">ast2fodt</span><span class="p">()</span>
     <span class="nc">File</span><span class="p">(</span><span class="s">"${project.projectDir}/output/ast.yaml"</span><span class="p">).</span><span class="nf">writeText</span><span class="p">(</span><span class="nf">ast</span><span class="p">().</span><span class="nf">toYamlString</span><span class="p">())</span>
-    <span class="nc">File</span><span class="p">(</span><span class="s">"${project.projectDir}/output/$presentationFile-v$version.fodt"</span><span class="p">).</span><span class="nf">writeText</span><span class="p">(</span><span class="nf">fodt</span><span class="p">())</span>
+    <span class="nc">File</span><span class="p">(</span><span class="s">"${project.projectDir}/output/$presentationFile-notes-v$version.fodt"</span><span class="p">).</span><span class="nf">writeText</span><span class="p">(</span><span class="nf">fodt</span><span class="p">())</span>
 <span class="p">}</span></code></pre>
        </div>
       </div>
@@ -1297,6 +1305,8 @@ pre.rouge {
         <ul>
          <li>
           <p>That Asciidoctor is a part of a gradle build</p></li>
+         <li>
+          <p>I started not from Asciidoctor HTML, but from Reveal.js Asciidoctor HTML to make notes more close to it and as a proof of constant, that technology have a safety margin against any HTML: Asciidoc HTML, Asciidoc Reveal.js HTML, MD, Wiki, ReST…​</p></li>
          <li>
           <p>And that it is quite minimalistic</p></li>
         </ul>
@@ -1323,7 +1333,10 @@ pre.rouge {
       </div>
       <aside class="notes">
        <div class="paragraph">
-        <p>Stress, that this is typical AST transforming code</p>
+        <p>Stress, that this is typical AST transforming code. Find nodes, and do smth with them.</p>
+       </div>
+       <div class="paragraph">
+        <p>Here we find section with H1 heading (title slide), and insert before it transformed version, then remove old version</p>
        </div>
       </aside>
      </div>
@@ -1425,7 +1438,7 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
       </div>
       <aside class="notes">
        <div class="paragraph">
-        <p>Rearranging looks like slim (or XSLT) templates. Not so slim as Slim, but definitely slimer than XSLT</p>
+        <p>Rearranging looks like slim (or XSLT) templates. Not so slim as Slim, but definitely slimmer than XSLT</p>
        </div>
       </aside>
      </div>
@@ -1485,21 +1498,36 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
      <div class="slide-content">
       <div class="listingblock">
        <div class="content">
-        <pre class="rouge highlight"><code data-lang="kotlin"><span class="nf">ast</span><span class="p">().</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">roles</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"notes"</span><span class="p">)</span> <span class="p">}</span> <i class="conum" data-value="2"></i><b>(2)</b>
+        <pre class="rouge highlight"><code data-lang="kotlin"><span class="nf">ast</span><span class="p">().</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">roles</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"notes"</span><span class="p">)</span> <span class="p">}</span> <i class="conum" data-value="1"></i><b>(1)</b>
     <span class="p">.</span><span class="nf">forEach</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="nf">insertBefore</span><span class="p">(</span><span class="nc">HorizontalLine</span><span class="p">())</span> <span class="p">}</span>
 <span class="nf">ast</span><span class="p">().</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span> <span class="k">is</span> <span class="nc">Heading</span> <span class="p">&amp;&amp;</span> <span class="n">it</span><span class="p">.</span><span class="n">level</span> <span class="p">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
     <span class="p">.</span><span class="nf">forEach</span> <span class="p">{</span>
         <span class="n">it</span><span class="p">.</span><span class="nf">insertBefore</span><span class="p">(</span>
             <span class="nc">Paragraph</span><span class="p">().</span><span class="nf">apply</span> <span class="p">{</span> <span class="nf">roles</span><span class="p">(</span><span class="s">"slide-finish"</span><span class="p">)</span> <span class="p">}</span>
         <span class="p">)</span>
-    <span class="p">}</span> <i class="conum" data-value="3"></i><b>(3)</b>
+    <span class="p">}</span> <i class="conum" data-value="2"></i><b>(2)</b>
 <span class="n">odtStyleList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nf">odtStyles</span><span class="p">())</span>
-<span class="n">odtStyleList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nf">rougeStyles</span><span class="p">())</span> <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+<span class="n">odtStyleList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nf">rougeStyles</span><span class="p">())</span> <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
        </div>
       </div>
       <aside class="notes">
-       <div class="paragraph">
-        <p>Just say that this is about inserting horizontal lines before notes and preventing slide from breaking.</p>
+       <div class="colist arabic">
+        <table>
+         <tbody>
+          <tr>
+           <td><i class="conum" data-value="1"></i><b>1</b></td>
+           <td>Inserting horizontal lines before notes</td>
+          </tr>
+          <tr>
+           <td><i class="conum" data-value="2"></i><b>2</b></td>
+           <td>Preventing slide from breaking</td>
+          </tr>
+          <tr>
+           <td><i class="conum" data-value="3"></i><b>3</b></td>
+           <td>Applying custom style and rouge code highlighting styles</td>
+          </tr>
+         </tbody>
+        </table>
        </div>
       </aside>
      </div>
@@ -1522,7 +1550,7 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
        </div>
        <aside class="notes">
         <div class="paragraph">
-         <p>Extending AST is quite simple. But it is rarely used. This is artificial example, easiear solution would be to add paragraph directly</p>
+         <p>Extending AST is quite simple. But it is rarely used. This is artificial example, easier solution would be to add paragraph directly</p>
         </div>
        </aside>
        <div class="listingblock fragment">
@@ -1562,7 +1590,7 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
          <p>By the way these snippets can be put into documentation. These are real cases.</p>
         </div>
         <div class="paragraph">
-         <p>But it is already Ivan Ponomarev’s talk</p>
+         <p>But it is already Ivan Ponomarev talk</p>
         </div>
        </aside>
       </div>
@@ -1592,7 +1620,7 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
         <li class="fragment">
          <p>Still more coincidence, they met Asciidoctor</p></li>
         <li class="fragment">
-         <p>Still more coincidence, they met LibreOffice</p></li>
+         <p>Still more coincidence, they met LibreOffice API</p></li>
         <li class="fragment">
          <p>Too much coincidence for coincidence?</p></li>
        </ul>
@@ -1729,7 +1757,7 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
        <tbody>
         <tr>
          <td class="tableblock halign-left valign-top">
-          <p class="tableblock"><span class="image"><img src="images/tex.png" alt="tex" width="80px"></span></p></td>
+          <p class="tableblock">TeX</p></td>
          <td class="tableblock halign-left valign-top">
           <div>
            <div class="ulist">
