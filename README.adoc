@@ -1,0 +1,5 @@
+.To get available tasks run
+[source, bash]
+----
+./gradlew tasks --group=talk
+----
