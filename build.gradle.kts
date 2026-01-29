@@ -20,7 +20,7 @@ import org.asciidoctor.SafeMode
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.languagetool.JLanguageTool
-import org.languagetool.language.Russian
+import org.languagetool.language.BritishEnglish
 import org.languagetool.rules.spelling.SpellingCheckRule
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
@@ -52,8 +52,6 @@ import writer.tableProperties
 version = "1.0.1"
 val presentationFile = "fosdem-printing"
 
-val spell = properties["spell"]
-
 buildscript {
     repositories {
         mavenCentral()
@@ -63,6 +61,7 @@ buildscript {
         classpath("org.jsoup:jsoup:1.17.1")
         classpath("com.google.guava:guava:21.0")
         classpath("org.languagetool:language-ru:5.6")
+        classpath("org.languagetool:language-en:5.6")
         classpath("org.seleniumhq.selenium:selenium-java:4.40.0")
         classpath("io.github.bonigarcia:webdrivermanager:5.8.0")
         classpath("org.apache.poi:poi:5.2.5")
@@ -74,7 +73,7 @@ buildscript {
 
 val makePdf = tasks.register("makePDF") {
     group = "talk"
-    description = "Creates PDF from HTML version"
+    description = "Creates PDF from HTML version of the presentation"
     mustRunAfter(makeHtml)
     doLast {
         arrayOf("print-pdf&pdfSeparateFragments=false" to "no-animation-", "print-pdf" to "animation-").forEach {
@@ -99,11 +98,7 @@ val makeHtml = tasks.register("makeHTML") {
                 this.jsoupParse().apply {
                     select("section:not(.title):not(.no-footer)")
                         .forEach { it.append(footerHtml(title)) }
-                }.apply {
-                    if (spell == null) return@apply
-                    this.selectXpath("//p").forEach { it.text().langToolsCheck() }
-                }
-                    .toString()
+                }.toString()
             }.toFile("${project.projectDir}/output/$presentationFile-v$version.html")
 
         File("${project.projectDir}/reveal.js").copyRecursively(
@@ -122,10 +117,6 @@ val makeHtml = tasks.register("makeHTML") {
             File("${project.projectDir}/output/white-course.css"),
             overwrite = true
         )
-        File("${project.projectDir}/version.txt").copyTo(
-            File("${project.projectDir}/output/version.txt"),
-            overwrite = true
-        )
     }
 }
 
@@ -134,61 +125,110 @@ val makeOd = tasks.register("makeOD") {
     description = "Creates OD (fodt) version of presentation with notes"
     doLast {
         File("output").mkdir()
-        // tag::boiler-plate[]
-        FodtConverter {
-            html = AsciidocHtmlFactory()
-                .getHtmlFromFile(File("${project.projectDir}/$presentationFile.adoc"), true)
-            template = File("${project.projectDir}/template-1.fodt").readText()
-            adaptWith(AsciidoctorOdAdapter)
-            unknownTagProcessingRule = unknownTagProcessingRuleRevealJs()
-            parse()
-            // end::boiler-plate[]
-            // tag::orchestration-rebuild-title[]
-            ast().descendant { section ->
-                section.sourceTagName == "section" &&
-                        section.descendant { it is Heading && it.level == 1 }
-                            .isNotEmpty()
-            }.first().also { it.insertBefore(makeTitle(it)) }.remove() // <1>
-            // end::orchestration-rebuild-title[]
-            // tag::orchestration-other[]
-            ast().descendant { it.roles.contains("notes") } // <1>
-                .forEach { it.insertBefore(HorizontalLine()) }
-            ast().descendant { it is Heading && it.level > 1 }
-                .forEach {
-                    it.insertBefore(
-                        Paragraph().apply { roles("slide-finish") }
-                    )
-                } // <2>
-            odtStyleList.add(odtStyles())
-            odtStyleList.add(rougeStyles()) // <3>
-            // end::orchestration-other[]
-            // bad decision to take Reveal.js as source for HTML, but safety margin of the approach allows
-            arrayOf("fa-lightbulb-o" to "Tip", "fa-warning" to "Warning")
-                .forEach { mapUnit ->
-                    ast().descendant { it.roles.contains(mapUnit.first) }.forEach {
-                        it.insertBefore(Paragraph().apply { +mapUnit.second })
-                        it.remove()
-                    }
-                }
-            // Ha! Order matters, interesting to check OD specification
-            ast().descendant { it is Table && (it.parent()?.roles?.contains("colist") ?: false) }
-                .map { it as Table }.forEach {
-                    it.children().first()
-                        .apply { arrayOf(8F, 162F).forEach { insertBefore(Col(Length(it))) } }
-                }
-            File("${project.projectDir}/output/${presentationFile}-prenote.html").writeText(html())
-            // tag::boiler-plate-2[]
-            ast2fodt()
+        convert().apply {
             File("${project.projectDir}/output/ast.yaml").writeText(ast().toYamlString())
             File("${project.projectDir}/output/$presentationFile-notes-v$version.fodt").writeText(fodt())
         }
-        // end::boiler-plate-2[]
     }
 }
 
-val fodt2All = tasks.register<Exec>("Fodt2All") {
+
+val makeIndex = tasks.register("makeIndex") {
     group = "talk"
-    description = "Converts notes from FODT (LibreOffice) to all formats, needs FODT file, created with ${makeOd.name}, needs LibreOffice and Kotlin installed"
+    description = "Compiles index file"
+    doLast {
+        File("version.adoc").writeText(":version: $version")
+        tasks
+            .filter { it.group == "talk" }.joinToString("\n") { "* *${it.name}*: ${it.description}" }
+            .let { File("tasks.adoc").writeText(it) }
+        AsciidocHtmlFactory()
+            .getHtmlFromFile(File("${project.projectDir}/index.adoc"), revealJs = false)
+            .let { File("output/index.html").writeText(it) }
+    }
+
+}
+
+val checkSpelling = tasks.register("checkSpelling") {
+    group = "talk"
+    description = "Checks spelling"
+    doLast {
+        convert().apply {
+            ast().descendant { paragraph ->
+                paragraph is Paragraph &&
+                        paragraph.ancestor { it.roles.contains("listingblock") }.isEmpty()
+            }.forEach { paragraph ->
+                paragraph.extractText { text ->
+                    if (text.ancestor { it.roles.contains("code") }.isNotEmpty()
+                        || text.text.contains("/")
+                    ) "Dummy" else text.text
+                }.langToolsCheck()
+            }
+        }
+    }
+}
+
+fun convert(): FodtConverter =
+    // tag::boiler-plate[]
+    FodtConverter {
+        html = AsciidocHtmlFactory()
+            .getHtmlFromFile(File("${project.projectDir}/$presentationFile.adoc"), true)
+        template = File("${project.projectDir}/template-1.fodt").readText()
+        adaptWith(AsciidoctorOdAdapter)
+        unknownTagProcessingRule = unknownTagProcessingRuleRevealJs()
+        parse()
+        // end::boiler-plate[]
+        // tag::orchestration-rebuild-title[]
+        ast().descendant { section ->
+            section.sourceTagName == "section" &&
+                    section.descendant { it is Heading && it.level == 1 }
+                        .isNotEmpty()
+        }.first().also { it.insertBefore(makeTitle(it)) }.remove() // <1>
+        // end::orchestration-rebuild-title[]
+        // Insert epigraph after title
+        ast().descendant { it.roles.contains("about-me") }.first().apply {
+            val blockquote = ast().descendant { it.sourceTagName == "blockquote" }
+                .first().extractText()
+            val attribution = ast().descendant { it.roles.contains("attribution") }
+                .first().extractText()
+            insertBefore(Paragraph().apply { roles("quote"); +blockquote })
+            insertBefore(Paragraph().apply { roles("attribution"); +attribution })
+        }
+        // tag::orchestration-other[]
+        ast().descendant { it.roles.contains("notes") } // <1>
+            .forEach { it.insertBefore(HorizontalLine()) }
+        ast().descendant { it is Heading && it.level > 1 }
+            .forEach {
+                it.insertBefore(
+                    Paragraph().apply { roles("slide-finish") }
+                )
+            } // <2>
+        odtStyleList.add(odtStyles())
+        odtStyleList.add(rougeStyles()) // <3>
+        // end::orchestration-other[]
+        // bad decision to take Reveal.js as source for HTML, but safety margin of the approach allows
+        arrayOf("fa-lightbulb-o" to "Tip", "fa-warning" to "Warning")
+            .forEach { mapUnit ->
+                ast().descendant { it.roles.contains(mapUnit.first) }.forEach {
+                    it.insertBefore(Paragraph().apply { +mapUnit.second })
+                    it.remove()
+                }
+            }
+        // Ha! Order matters, interesting to check OD specification
+        ast().descendant { it is Table && (it.parent()?.roles?.contains("colist") ?: false) }
+            .map { it as Table }.forEach {
+                it.children().first()
+                    .apply { arrayOf(8F, 162F).forEach { insertBefore(Col(Length(it))) } }
+            }
+        File("${project.projectDir}/output/${presentationFile}-prenote.html").writeText(html())
+        // tag::boiler-plate-2[]
+        ast2fodt()
+    }
+// end::boiler-plate-2[]
+
+val fodt2All = tasks.register<Exec>("fodt2All") {
+    group = "talk"
+    description =
+        "Converts notes from FODT (LibreOffice) to all formats, needs FODT file, created with ${makeOd.name}, needs LibreOffice and Kotlin installed"
     commandLine(
         "kotlin",
         "lo-kts-converter.main.kts",
@@ -203,7 +243,7 @@ val fodt2All = tasks.register<Exec>("Fodt2All") {
 
 class AsciidocHtmlFactory {
     private val factory: Asciidoctor = Factory.create()
-    fun getHtmlFromFile(file: File, sectnums: Boolean = false): String {
+    fun getHtmlFromFile(file: File, sectnums: Boolean = false, revealJs: Boolean = true): String {
         return factory.convertFile(
             file,
             Options.builder().backend("html5").sourcemap(true)
@@ -211,7 +251,10 @@ class AsciidocHtmlFactory {
                     if (sectnums)
                         attributes(org.asciidoctor.Attributes.builder().attribute("sectnums").build())
                 }.safe(SafeMode.UNSAFE).toFile(false).standalone(true)
-                .templateDirs(File("${project.projectDir}/templates"))
+                .apply {
+                    if (revealJs)
+                        templateDirs(File("${project.projectDir}/templates"))
+                }
                 .build()
         )
     }
@@ -244,7 +287,7 @@ fun footerHtml(title: String): String {
 }
 
 object LangTools {
-    private val langTool = JLanguageTool(Russian())
+    private val langTool = JLanguageTool(BritishEnglish())
     var ruleTokenExceptions: Map<String, Set<String>> = mapOf()
     var ruleExceptions: Set<String> = setOf("")
 
@@ -283,23 +326,27 @@ fun String.langToolsCheck() {
         .apply {
             setSpellTokens(
                 ignore = arrayOf(
-                    "Ишуи",
-                    "шаблонизаторах",
-                    "препроцессинг",
-                    "десериализации",
-                    "постпроцессинга",
-                    "сниппеты",
-                    "переиспользует",
-                    "переиспользуемое",
-                    "портируемый",
-                    "портируемое",
-                    "типографики",
-                    "типографику"
+                    "Ferenc",
+                    "free-spirited",
+                    "Nikolaj",
+                    "Potashnikov",
+                    "Asciidoctor",
+                    "Asciidoc",
+                    "WeasyPrint",
+                    "UniDoc",
+                    "ReportLab",
+                    "PDFBox",
+                    "pandocfilter",
+                    "Ponomarev",
+                    "Gradle",
+                    "ReST",
+                    "XPath",
+                    "DocOps",
+                    "DummyDummy"
                 )
             )
             ruleExceptions = setOf(
                 "UPPERCASE_SENTENCE_START",
-                "RU_UNPAIRED_BRACKETS"
             )
         }
         .check(this)
@@ -381,18 +428,35 @@ fun odtStyles(): OdtStyleList = OdtStyleList(
     OdtStyle { node ->
         if (node.roles.contains("slide-finish")) return@OdtStyle
         paragraphProperties { attributes("fo:keep-with-next" to "always") }
-    }
+    },
     // end::dont-break-slide[]
+    OdtStyle { p ->
+        if (p !is Paragraph) return@OdtStyle
+        if (!p.roles.contains("quote")) return@OdtStyle
+        paragraphProperties { attributes("fo:margin-left" to "70mm", "fo:margin-top" to "3mm") }
+        textProperties { attributes("fo:font-style" to "italic") }
+    },
+    OdtStyle { p ->
+        if (p !is Paragraph) return@OdtStyle
+        if (!p.roles.contains("attribution")) return@OdtStyle
+        paragraphProperties {
+            attributes(
+                "fo:text-align" to "end", "fo:margin-top" to "2mm",
+                "fo:margin-bottom" to "5mm"
+            )
+        }
+        textProperties { attributes("fo:font-style" to "italic", "fo:font-size" to "11pt") }
+    },
 )
 
-fun makeTitle(sourceNode: Node): Node {
+fun makeTitle(titleSlideSection: Node): Node {
     return OpenBlock().apply {
         // tag::extracting-title-element[]
-        val title = sourceNode.descendant { it is Heading && it.level == 1 }.first()
-        val notes = sourceNode.descendant { it.sourceTagName == "aside" }.first()
+        val title = titleSlideSection.descendant { it is Heading && it.level == 1 }.first()
+        val notes = titleSlideSection.descendant { it.sourceTagName == "aside" }.first()
         val (fullName, bio, photo, contact, logo) =
             arrayOf("full-name", "bio", "title-photo", "contact", "logo")
-                .map { role -> sourceNode.descendant { it.roles.contains(role) }.first() }
+                .map { role -> titleSlideSection.descendant { it.roles.contains(role) }.first() }
 
         logo.descendant { it is Image }.first().let { it as Image }
             .width = Length(1000F, LengthUnit.cmm)
@@ -472,12 +536,13 @@ fun unknownTagProcessingRuleRevealJs(): HtmlNode.() -> UnknownTagProcessing = {
                 "olist",
                 "ulist",
                 "content",
+                "attribution",
                 *(1..6).map { "sect$it" }.toTypedArray(),
             )
         ).isNotEmpty()
     ) {
         UnknownTagProcessing.PROCESS
-    } else if (setOf("dl", "dt", "dd", "section", "aside").contains(nodeName())) {
+    } else if (setOf("dl", "dt", "dd", "section", "aside", "blockquote").contains(nodeName())) {
         UnknownTagProcessing.PROCESS
     } else if (setOf("div", "script", "#data").contains(nodeName())) {
         UnknownTagProcessing.PASS

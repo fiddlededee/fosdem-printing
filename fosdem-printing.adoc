@@ -1,7 +1,6 @@
-= Why our HTML Docs don't just `Print` and what to do about it
+= Why our HTML Docs Don't Just `Print` and What to Do About It
 :!imagesdir:
 :source-highlighter: rouge
-// :rouge-css: style
 :revealjsdir: reveal.js
 :revealjs_customtheme: white-course.css
 :revealjs_slideNumber:
@@ -16,7 +15,6 @@
 :figure-caption!:
 :example-caption!:
 :table-caption!:
-:sectnums:
 
 [.title-footer]
 [cols="260,1100,320"]
@@ -42,49 +40,61 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
 
 [.notes]
 --
-* As a solution architect I need to create targeted docs for each stakeholder.
+* As a solution architect, I need to create targeted docs for each stakeholder.
 What is the easiest way to share them?
-Via email, messenger... as a PDF, a Word file.
-In short, in a 'print' format.
+Via email, a messenger... as a PDF, a Word file.
+In short, in a print format
+* [REF] Why this epigraph?
+** It’s FOSDEM, and Liszt was one of the most free spirited composers — and perhaps people
+** Value is in the result; tools shouldn’t limit freedom in getting the result we need to get
+** A conductor should get the maximum out of the capabilities he has in the orchestra, so should we, no matter what constraints we've got on the side of input markup, output format, rendering technology
 --
 
-[[a300]]
-== Way in converting simple text markup to `print` formats
+[[a400]]
+[%notitle]
+== Epigraph
 
-* https://github.com/CourseOrchestra/course-doc: XSL-FO templates for Asciidoctor -> Docbook backend
-* https://github.com/CourseOrchestra/asciidoctor-open-document: Open Document Converter for Asciidoc
-* https://github.com/fiddlededee/unidoc-publisher: UniDoc Publisher -- any markup to any printing rendering engine
-
-[.notes]
---
-* Today we are speaking about UniDoc Publisher approach, but we'll look at Asciidoctor Open Document. Why despite success I felt obliged to make an extra step.
---
+"The principal task of a conductor is not to{nbsp}put himself in{nbsp}evidence but to{nbsp}disappear behind his{nbsp}functions"
+-- Liszt Ferenc
 
 [[a1]]
 == `Print`, `Export to Word`, `Export to PDF` are very often just a trap
 
 [%step]
-.What to do with long line in listing?
+.What to do with a long line in a listing?
 * We may scale
 * Or use landscape orientation
 * Or both, but would it be enough?
-* If not, we may fire error for long lines
-* Or wrap them
+* If not, we may fire error for long lines or wrap them
 * With linefeed and spaces?
 And how to copy?
 * With indents?
 Still impossible to copy from PDF
+* And on the web we can just add horizontal scroll bar.
 
 [%step]
-TIP: And in web we can just add horizontal scroll bar.
+WARNING: There is a core mismatch: semantic markup meets the rigid world of print
 
 [.notes]
 --
-* There is the core mismatch: semantic markup meets the rigid world of print.
 * Take a simple listing... (go through very briefly just to give filling)
 ** Stop on orientation -- it is already not about semantic markup. Landscape for listing, for section, for higher level section?
 Should tech writer use media hints?
-* My goal for today is to show my approach to for tackling such problems UniDoc Publisher
+* The goal of this talk is to show an approach to tackling such problems
+* This talk is aimed at engineers who automate documentation and need reliable print output
+--
+
+
+[[a300]]
+== Iterations in converting simple text markup to print formats
+
+* https://github.com/CourseOrchestra/course-doc: XSL-FO templates for Asciidoctor -> DocBook backend
+* https://github.com/CourseOrchestra/asciidoctor-open-document: Open Document Converter for Asciidoc
+* https://github.com/fiddlededee/unidoc-publisher: UniDoc Publisher -- any markup to any printing rendering engine
+
+[.notes]
+--
+* Today we are speaking about UniDoc Publisher approach, but we'll look at Asciidoctor Open Document. Why, despite success an extra step was needed
 --
 
 [[a17]]
@@ -101,8 +111,8 @@ CSS Paged Media -- CSS extension, defining style specific for printing
 
 [.notes]
 --
-* Despite we live with Paged Media CSS for almost 15 years, HTML -- still poor browser support, usually used via PDF. HTML for printing is intermediary format. There is a great open source solutions to convert it to PDF -- WeasyPrint and a number of a very good non opensource solutions. But still HTML is an intermediary format
-* If somebody interested, probably most well-known are Antenna Publisher, Oxygen (the letter we used 20 years ago for authoring DocBook and converting to PDF via TeX)
+* Despite we live with Paged Media CSS for almost 15 years, HTML -- still poor browser support, usually used via PDF. HTML for printing is an intermediary format. There are great open-source solutions to convert it to PDF -- WeasyPrint and a number of a great non-open-source solutions. But still HTML is an intermediary format
+* [REF] If somebody is interested, probably the most well-known are Antenna Publisher, Oxygen
 --
 
 [[a2]]
@@ -118,20 +128,20 @@ CSS Paged Media -- CSS extension, defining style specific for printing
 [%step]
 [WARNING]
 ====
-These technologies are not aligned in infinite details like:
+These technologies are not aligned in a great number of details like:
 
 * Apache FOP has problems with Leader alignment (dots in a table of contents)
 * LO Writer doesn't support typography (like keep with next) within table cells
-* Microsoft doesn't recommend to run automation tasks (like saving PDF) on a server
+* Microsoft doesn't recommend running automation tasks (like saving PDF) on a server
 ====
 
 
 [.notes]
 --
-* There are others, but I estimate these as 99% of all
-* You can see Leader Problems in UniDoc Publisher documentation
-* Native libraries examples: ReportLab in Python, Prawn in Ruby, PDFBox in Java
-* (if somebody needs reference) https://support.microsoft.com/en-us/topic/considerations-for-server-side-automation-of-office-48bcfe93-8a89-47f1-0bce-017433ad79e2
+* There are others, but these cover most cases
+* [REF] Native libraries examples: ReportLab in Python, Prawn in Ruby, PDFBox in Java
+* [REF] You can see Leader Problems in UniDoc Publisher documentation
+* [REF] https://support.microsoft.com/en-us/topic/considerations-for-server-side-automation-of-office-48bcfe93-8a89-47f1-0bce-017433ad79e2
 --
 
 == Some brief conclusions
@@ -146,17 +156,17 @@ Feel like speleologist?
 --
 [%step]
 * The world of printing is the world of constraints
-* And that constraints differ for each technology, you often need to support several chains (exquisitely looking PDF with TeX and LibreOffice for coordination)
+* And those constraints differ for each technology, you often need to support several chains (exquisitely looking PDF with TeX and LibreOffice for coordination)
 * With no universal solutions
 --
 
 [.notes]
 --
-Two speleologist meet in a narrow tunnel.
+Two speleologists meet in a narrow tunnel.
 I'm from a dead end.
 I'm too!
 
-* Documentation of UniDoc Publisher is created with Asciidoctor is published with WeasyPrint, XSL-FO and Open Document toolchains. Looks pretty the same. But just as a proof of concept
+* Documentation of UniDoc Publisher is created with Asciidoctor and published with WeasyPrint, XSL-FO and Open Document toolchains. Looks pretty the same. But just as a proof of concept
 --
 
 [[a50]]
@@ -164,7 +174,7 @@ I'm too!
 
 * You don't prepare documentation especially for printing purposes
 * You are automating documentation generation and hope it will look good, no matter what will be generated
-* You output format is one of text processing format
+* Your output format is one of the text processing format
 
 [.notes]
 --
@@ -180,7 +190,7 @@ I'm too!
 . Asciidoctor parses markup into AST (Abstract Syntax Tree)
 . You may transform AST with Asciidoctor AST processing
 . Asciidoctor runs writer template for each AST node recursively
-. You may write you code in pure Ruby or with special Slim templates
+. You may write your code in pure Ruby or with special Slim templates
 --
 
 
@@ -233,7 +243,7 @@ text:list text:style-name="#{list_style}"
 [.notes]
 --
 * dash means code in Ruby
-* get_basic_style -- is some external function, defined as a helper, so Ruby can be used withing template
+* `get_basic_style` is some external function, defined as a helper, so Ruby can be used within template
 --
 
 [[a10]]
@@ -257,7 +267,7 @@ text:list text:style-name="#{list_style}"
 [TIP]
 ====
 * Asciidoctor Open Document introduces some extended Open Document format to preserve Asciidoctor AST contents
-* Each function checks, if style should be applied, and if yes, applies it
+* Each function checks, if style should be applied, and if yes, applies it in a more or less OpenDocument way: doesn't understand styling attributes but forces the style structure
 ====
 
 [.notes]
@@ -270,37 +280,44 @@ text:list text:style-name="#{list_style}"
 === And still
 
 [%step]
-* Unexpectedly transforming this extended Open Document format became one of the most used feature of Asciidoctor Open Document
+* Unexpectedly transforming this extended Open Document format became one of the most used features of Asciidoctor Open Document
 * Styling as separate task of writing proved also to be useful
-* The Gradle was magnificent in gluing all parts together
+* Gradle was magnificent in gluing all parts together
 
 [.notes]
 --
-* But we have example of Pandoc that places heavy attention on AST transformation.
-There is even https://github.com/jgm/pandocfilters[pandocfilter] project, that simplifies AST transformation for Python. I think the world meta-converter quite fits Pandoc. But using own converters raises compatibility issues and no special styling approach.
-* Although this circus is glued with docker, my experiments showed, that gluing with Gradle is much more controllable. Yes, finally it would be docker. but at the very end
+* But obviously while we should transform AST directly, not it's XML representation. Pandoc clearly showed that transforming AST is very convenient. It turned out to be much more useful than expected, especially if we are dealing with print output without CSS
+* It is important not to output raw templates, but override only styling part
+* Although Asciidoctor Open Document is glued with Docker, my experiments showed, that gluing with Gradle is much more controllable. Yes, finally it would be docker, but at the very end
+
+TIP: At this point, it became clear that the approach could be improved at an architectural level
 --
 
 [[a12]]
 == Thoughts before the second step
 
 [%step]
-* If creating universal converter impossible...
-* We should create meta converter -- platform for building converters
+* If creating universal converter is impossible...
+* We should create *meta converter* -- platform for building converters
 
 [%step.indent-before]
 .Estimated requirements
 --
 [%step]
 * Native converter as a reader
-* Great ways of transforming AST
+* Sound ways of transforming AST
 * A good approach for styling as a separate focus
 * 99% generic writer
-* Good integration with CI/CD
+* Good integration with CI/CD with a focus on homogeneity
+--
+
+[.notes]
+--
+Close to Pandoc but with a focus on native converter, style overriding and CI/CD homogeneity
 --
 
 [[a200]]
-== Native converter as a reader?
+=== Native converter as a reader?
 
 [%step]
 TIP: Each converter outputs HTML.
@@ -309,22 +326,27 @@ HTML is quite semantic, why shouldn't we use it?
 [[a105]]
 == Let's convert this presentation to LO Writer
 
-image::images/slide-1-to-print.png[width=65%]
+image::images/slide-1-to-print.png[width=58%]
 
 [.notes]
 --
-This presentation as is shown in Ivan Ponomarev talk is created with Asciidoctor, so we can convert it to document with notes
+This presentation is created with Asciidoctor Reveal.js, so we can convert it to document with notes
 --
 
 [[a306]]
-== Notes on this demo
+=== Notes on this demo
 
 [%step]
-* Everything is in a single `build.gradle.kts` file
-* All Kotlin code examples are just includes from this `build.gradle.kts`
+* Everything is in a single Gradle script (`build.gradle.kts`)
+* All Kotlin code examples are just includes from this script
+
+[.notes]
+--
+Instead of Gradle script it can be just an ordinary Java/Kotlin project, with a CLI or even service utility as an output
+--
 
 [[a106]]
-== Boilerplate
+=== Boilerplate
 
 [source,kotlin,indent=0]
 ----
@@ -335,14 +357,13 @@ include::build.gradle.kts[tag=boiler-plate-2]
 
 [.notes]
 --
-.Just stress
-* That Asciidoctor is a part of a gradle build
-* I started not from Asciidoctor HTML, but from Reveal.js Asciidoctor HTML to make notes more close to it and as a proof of constant, that technology have a safety margin against any HTML: Asciidoc HTML, Asciidoc Reveal.js HTML, MD, Wiki, ReST...
-* And that it is quite minimalistic
+* Asciidoctor is a part of a Gradle build
+* The project starts not from Asciidoctor HTML, but from Reveal.js Asciidoctor HTML to make notes contents closer to slides and as a proof of concept. The technology has a safety margin against any HTML: Asciidoc HTML, Asciidoc Reveal.js HTML, MD, Wiki, ReST...
+* The boilerplate is quite minimalistic
 --
 
 [[a107]]
-== Processing AST
+=== Processing AST
 
 [source,kotlin,indent=0]
 ----
@@ -351,13 +372,13 @@ include::build.gradle.kts[tag=orchestration-rebuild-title]
 
 [.notes]
 --
-Stress, that this is typical AST transforming code. Find nodes, and do smth with them.
+Typical AST transforming code. Typed, navigable, and testable
 
-Here we find section with H1 heading (title slide), and insert before it transformed version, then remove old version
+Here we find section with H1 heading (title slide), and insert before it the transformed version, then remove old version
 --
 
 [[a108]]
-== Rearranging title (Asciidoc source)
+=== Rearranging title (Asciidoc source)
 
 [source,asciidoc]
 ----
@@ -366,11 +387,11 @@ include::fosdem-printing.adoc[tag=asciidoc-title-table]
 
 [.notes]
 --
-Stress that all elements has roles
+All elements have roles
 --
 
 [[a109]]
-== Rearranging title, extracting semantics
+=== Rearranging title, extracting semantics
 
 [source,kotlin,indent=0]
 ----
@@ -379,11 +400,11 @@ include::build.gradle.kts[tag=extracting-title-element]
 
 [.notes]
 --
-* stress that extracting looks like Xpath
+Looks like XPath but once again typed, navigable, and testable
 --
 
 [[a110]]
-== Rearranging title, constructing title
+=== Rearranging title, constructing title
 
 [source,kotlin,indent=0]
 ----
@@ -392,16 +413,21 @@ include::build.gradle.kts[tag=building-new-title]
 
 [.notes]
 --
-Rearranging looks like slim (or XSLT) templates. Not so slim as Slim, but definitely slimmer than XSLT
+Rearranging looks like Slim (or XSLT) templates. Not so slim as Slim, but definitely slimmer than XSLT
 --
 
 [[a309]]
-== Let's return to the result
+=== Let's return to the result
 
-image::images/print-title.png[width=55%]
+image::images/slide-1-to-print.png[width=58%]
+
+[.notes]
+--
+An epigraph appeared from the second slide. You may look at `build.gradle.kts` and find out how. But it is a very common task when we render printing version of a document
+--
 
 [[a201]]
-== And a little bit of styling
+=== And a little bit of styling
 
 [source,kotlin,indent=0]
 ----
@@ -410,11 +436,11 @@ include::build.gradle.kts[tag=title-page-styles]
 
 [.notes]
 --
-Not a CSS, but the feeling resembles: select node, apply formatting
+Programmable, but overrides only styling. As mentioned before UniDoc Publisher doesn't know about styling attributes, but it ensures the structure of a style
 --
 
 [[a112]]
-== Let's return to processing AST
+=== Now let's return to processing AST
 
 [source,kotlin,indent=0]
 ----
@@ -426,10 +452,12 @@ include::build.gradle.kts[tag=orchestration-other]
 <1> Inserting horizontal lines before notes
 <2> Preventing slide from breaking
 <3> Applying custom style and rouge code highlighting styles
+
+Rouge styles are generated automatically from rouge.css. The code is in `build.gradle.kts` -- just about 20 lines. Using CSS for each rendering technology is really useful in many cases
 --
 
 [[a113]]
-== Extending AST
+=== Extending AST
 
 [%step]
 [source,kotlin,indent=0]
@@ -437,16 +465,17 @@ include::build.gradle.kts[tag=orchestration-other]
 include::build.gradle.kts[tag=defining-custom-element]
 ----
 
-[.notes]
---
-Extending AST is quite simple. But it is rarely used. This is artificial example, easier solution would be to add paragraph directly
---
-
 [%step]
 [source,kotlin,indent=0]
 ----
 include::build.gradle.kts[tag=custom-element]
 ----
+
+[.notes]
+--
+* Extending AST is quite simple. But it is rarely used. This is artificial example, easier solution would be to add paragraph directly
+* The same approach lets us completely override template, but once again it is rarely used. Only if some bug in UniDoc publisher writer is found, but we don't want to wait for a fix
+--
 
 [[a14]]
 === Testing
@@ -455,89 +484,42 @@ image::images/approval.png[width=100%]
 
 [.notes]
 --
-If we have Asciidoctor with some Printing converter platform on top and Converter on top, we should be sure, that minor changes won't break anything.
+If we have Asciidoctor with some Printing converter platform on top and Converter on top, we should be sure, that minor changes won't break anything
 
-I use the system of snippets, render them into png and compare by pixels with reference.
-Almost 100% guaranty.
+I use the system of snippets, render them into PNG and compare by pixels with reference.
+Almost 100% guarantee.
 
-By the way these snippets can be put into documentation.
-These are real cases.
+By the way, these snippets can be put into documentation. These are real cases of usage.
+--
 
-But it is already Ivan Ponomarev talk
+== Focus and trade-offs
+
+[%step]
+* CI friendly -- pure Gradle (or an ordinary Kotlin project) to rule them all
+* No declarations, everything should be programmed
+* Typed AST -- check before run
+* Clean and testable code
+* One AST and one styling approach, but different styling typed API for each backend
+
+[.notes]
+--
+Once again about focus and trade-offs, but after the demo
+
+* Gradle + Kotlin stack is just a coincidence, where syntax, wide ecosystem and CI accidentally met
+* Still more coincidence -- they met Asciidoctor
+* Still more coincidence -- they met LibreOffice API
+* Too much coincidence for coincidence?
 --
 
 == Conclusion
 
 [%step]
-* If you need to get doc in printing format, don't pursue universality, limit, limit and limit
-* Don't search for solution with options, prepare to code
-* Ecosystem is crucial. Gradle + Kotlin stack is just a coincidence, where syntax, wide ecosystem and CI accidentally met
-* Still more coincidence, they met Asciidoctor
-* Still more coincidence, they met LibreOffice API
-* Too much coincidence for coincidence?
-
-[.notes]
---
-* There are slides with comparison, we can look at them personally after the talk
---
+* Treat printing as engineering: design it, test it, automate it
+* Printing is a lossy transformation — some semantics cannot survive it
+* Keep rendering logic programmable and under your control
 
 == Questions?
 
-// Here QR code to Asciidoctor Open Document and UniDoc Publisher repositories
-
-//Bonus slides: rendering technology comparison
-// Not to be shown during talk: for questions and discussions
-[%notitle]
-== Bonus slides
-
-[[a20]]
-=== Comparison
-
-[options=header,cols="1,3,4"]
-|===
-|Technology |Strengths |Weaknesses
-|Native
-a|* The technology is typically used by converters with a low entry barrier
-a|* Most often has a unique configuration approach
-* High likelihood of encountering unexpected limitations
-
-|XSL-FO
-a|* Time-tested technology, W3C standard
-a|* Different processors yield different results (e.g., varying typography limitations)
-* Better to stick to FO; XSLT is outdated and hard to maintain
-* Slow build performance (at least with Apache FOP)
-
-|===
-
-[[a18]]
-== Comparison #2
-
-[options=header,cols="1,3,4"]
-|===
-|Technology |Strengths |Weaknesses
-|TeX
-a|* Best-in-class typography, suitable for mass printing
-* Mature, albeit complex, ecosystem
-a|* ...albeit complex ecosystem
-|Paged Media CSS
-a|* W3C standard
-* Takes HTML as input, so it's practically applicable everywhere
-a|* Browser support remains very limited
-* Among free tools, I would recommend only WeasyPrint
-
-|===
-
-[[a19]]
-== Comparison #3
-
-[options=header,cols="1,3,4"]
-|===
-|Technology |Strengths |Weaknesses
-|Word processors
-a|* Format is designed for manual editing of the output document
-* Fastest way to produce output (even when PDF is required)
-a|* Only LibreOffice aligns with the DocOps paradigm
-* Imposes numerous constraints, including on typography
-* Saving to a word processor format almost always requires extensive custom adjustments and limitations
-|===
+* https://github.com/fiddlededee/unidoc-publisher: UniDoc Publisher -- any markup to any printing rendering engine
+* https://github.com/fiddlededee/fosdem-printing/tree/main: this presentation repository
 

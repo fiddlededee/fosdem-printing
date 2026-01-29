@@ -1,3 +1,5 @@
 .idea
 .gradle
 build
+version.adoc
+tasks.adoc

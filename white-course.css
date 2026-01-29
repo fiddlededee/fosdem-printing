@@ -965,3 +965,35 @@ section {
     list-style-type: square;
     color: #ac1d94;
 }
+
+.quoteblock blockquote {
+    color: rgba(0, 0, 0, .85);
+    font-size: 2em;
+    line-height: 1.75;
+    word-spacing: .1em;
+    font-style: italic;
+    box-shadow: none;
+    text-align: left;
+    width: calc(100% - 8em);
+    padding-left: 2em;
+    margin-top: 2em;
+}
+
+.quoteblock blockquote::before {
+    content: "\201c";
+    float: left;
+    font-style: normal;
+    font-size: 2.75em;
+    font-weight: bold;
+    line-height: .6em;
+    margin-left: -.6em;
+    color: #ac1d94;
+}
+
+.attribution {
+    font-size: 1.5em;
+    width: calc(100% - 8em);
+    padding-left: 4em;
+    font-style: italic;
+    text-align: right;
+}

@@ -1,0 +1,18 @@
+== Why our HTML Docs don't just `Print` and what to do about{nbsp}it
+:gh-pages-url: https://fiddlededee.github.io/fosdem-printing
+include::version.adoc[]
+
+"The principal task of a conductor is not to{nbsp}put himself in evidence but to disappear behind his{nbsp}functions"
+-- Liszt Ferenc
+
+.Fosdem'2026 talk materials
+* {gh-pages-url}/fosdem-printing-v{version}.html[Presentation in HTML]
+* {gh-pages-url}/fosdem-printing-animation-v{version}.pdf[Presentation in PDF with animation]
+* {gh-pages-url}/fosdem-printing-no-animation-v{version}.pdf[Presentation in PDF with no animation]
+* Notes for presentation: {gh-pages-url}/fosdem-printing-notes-v1.0.1.pdf[PDF], {gh-pages-url}/fosdem-printing-notes-v1.0.1.docx[DOCX], {gh-pages-url}/fosdem-printing-notes-v1.0.1.odt[ODT], {gh-pages-url}/fosdem-printing-notes-v1.0.1.fodt[FODT]
+
+.Available Gradle tasks
+include::tasks.adoc[]
+
+
+
