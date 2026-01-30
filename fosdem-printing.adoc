@@ -116,7 +116,7 @@ CSS Paged Media -- CSS extension, defining style specific for printing
 --
 
 [[a2]]
-=== Most widespread rendering approaches
+== Most widespread rendering approaches
 
 [%step]
 * PDF <- native PDF-generating libraries
@@ -201,7 +201,7 @@ I'm too!
 --
 
 [[a301]]
-=== A simplified processing AST example
+== A simplified processing AST example
 
 [cols="2,3"]
 |===
@@ -249,7 +249,7 @@ text:list text:style-name="#{list_style}"
 --
 
 [[a10]]
-=== Great, but
+== Great, but
 
 [%step]
 * You can't override part of a template
@@ -279,7 +279,7 @@ text:list text:style-name="#{list_style}"
 --
 
 [[a11]]
-=== And still
+== And still
 
 [%step]
 * Unexpectedly transforming this extended Open Document format became one of the most used features of Asciidoctor Open Document
@@ -319,7 +319,7 @@ Close to Pandoc but with a focus on native converter, style overriding and CI/CD
 --
 
 [[a200]]
-=== Native converter as a reader?
+== Native converter as a reader?
 
 [%step]
 TIP: Each converter outputs HTML.
@@ -336,7 +336,7 @@ This presentation is created with Asciidoctor Reveal.js, so we can convert it to
 --
 
 [[a306]]
-=== Notes on this demo
+== Notes on this demo
 
 [%step]
 * All conversion settings are written in Kotlin
@@ -349,7 +349,7 @@ This presentation is created with Asciidoctor Reveal.js, so we can convert it to
 --
 
 [[a106]]
-=== Boilerplate
+== Boilerplate
 
 [source,kotlin,indent=0]
 ----
@@ -366,7 +366,7 @@ include::build.gradle.kts[tag=boiler-plate-2]
 --
 
 [[a107]]
-=== Processing AST
+== Processing AST
 
 [source,kotlin,indent=0]
 ----
@@ -381,7 +381,7 @@ Here we find section with level 1 heading (title slide), then insert before it t
 --
 
 [[a108]]
-=== Rearranging title (Asciidoc source)
+== Rearranging title (Asciidoc source)
 
 [source,asciidoc]
 ----
@@ -394,7 +394,7 @@ All elements have roles
 --
 
 [[a109]]
-=== Rearranging title, extracting semantics
+== Rearranging title, extracting semantics
 
 [source,kotlin,indent=0]
 ----
@@ -407,7 +407,7 @@ Looks like XPath but once again typed, navigable, and testable
 --
 
 [[a110]]
-=== Rearranging title, constructing title
+== Rearranging title, constructing title
 
 [source,kotlin,indent=0]
 ----
@@ -420,7 +420,7 @@ Rearranging looks like Slim (or XSLT) templates. Not so slim as Slim, but defini
 --
 
 [[a309]]
-=== Back return to the result
+== Back return to the result
 
 image::images/slide-1-to-print.png[width=58%]
 
@@ -430,7 +430,7 @@ An epigraph appeared from the second slide. You may look at `build.gradle.kts` a
 --
 
 [[a201]]
-=== Styling
+== Styling
 
 [source,kotlin,indent=0]
 ----
@@ -443,7 +443,7 @@ Programmable, but overrides only styling. As mentioned before UniDoc Publisher d
 --
 
 [[a112]]
-=== Some more AST processing
+== Some more AST processing
 
 [source,kotlin,indent=0]
 ----
@@ -461,7 +461,7 @@ include::build.gradle.kts[tag=orchestration-other]
 --
 
 [[a113]]
-=== Extending AST
+== Extending AST
 
 [%step]
 [source,kotlin,indent=0]
@@ -482,7 +482,7 @@ include::build.gradle.kts[tag=custom-element]
 --
 
 [[a14]]
-=== Testing
+== Testing
 
 image::images/approval.png[width=100%]
 

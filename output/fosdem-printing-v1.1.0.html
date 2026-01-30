@@ -816,108 +816,101 @@ pre.rouge {
       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
      </div>
     </section>
-    <section>
-     <section id="a17">
-      <h2>Main formats for printing</h2>
-      <div class="slide-content">
-       <div class="olist arabic">
-        <ol class="arabic">
-         <li class="fragment">
-          <p>PDF</p></li>
-         <li class="fragment">
-          <p>Text processing formats (Open XML — MS Office, Open Document — LibreOffice)</p></li>
-         <li class="fragment">
-          <p>HTML?</p></li>
-        </ol>
-       </div>
-       <div class="admonitionblock tip fragment">
-        <table>
-         <tbody>
-          <tr>
-           <td class="icon"><i class="fa fa-lightbulb-o" title="Tip"></i></td>
-           <td class="content">CSS Paged Media — CSS extension, defining style specific for printing</td>
-          </tr>
-         </tbody>
-        </table>
-       </div>
-       <aside class="notes">
-        <div class="ulist">
-         <ul>
-          <li>
-           <p>Despite we live with Paged Media CSS for almost 15 years, HTML — still poor browser support, usually used via PDF. HTML for printing is an intermediary format. There are great open-source solutions to convert it to PDF — WeasyPrint and a number of a great non-open-source solutions. But still HTML is an intermediary format</p></li>
-          <li>
-           <p>[REF] If somebody is interested, probably the most well-known are Antenna Publisher, Oxygen</p></li>
-         </ul>
-        </div>
-       </aside>
+    <section id="a17">
+     <h2>Main formats for printing</h2>
+     <div class="slide-content">
+      <div class="olist arabic">
+       <ol class="arabic">
+        <li class="fragment">
+         <p>PDF</p></li>
+        <li class="fragment">
+         <p>Text processing formats (Open XML — MS Office, Open Document — LibreOffice)</p></li>
+        <li class="fragment">
+         <p>HTML?</p></li>
+       </ol>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+      <div class="admonitionblock tip fragment">
+       <table>
+        <tbody>
+         <tr>
+          <td class="icon"><i class="fa fa-lightbulb-o" title="Tip"></i></td>
+          <td class="content">CSS Paged Media — CSS extension, defining style specific for printing</td>
+         </tr>
+        </tbody>
+       </table>
       </div>
-     </section>
-     <section id="a2">
-      <h2>Most widespread rendering approaches</h2>
-      <div class="slide-content">
+      <aside class="notes">
        <div class="ulist">
         <ul>
-         <li class="fragment">
-          <p>PDF ← native PDF-generating libraries</p></li>
-         <li class="fragment">
-          <p>PDF ← XSL-FO with FOP-processors</p></li>
-         <li class="fragment">
-          <p>PDF ← via TeX</p></li>
-         <li class="fragment">
-          <p>PDF ← HTML + Paged Media CSS</p></li>
-         <li class="fragment">
-          <p>DOCX/ODT, PDF ← +/- text processors (MS Word, LO Writer)</p></li>
+         <li>
+          <p>Despite we live with Paged Media CSS for almost 15 years, HTML — still poor browser support, usually used via PDF. HTML for printing is an intermediary format. There are great open-source solutions to convert it to PDF — WeasyPrint and a number of a great non-open-source solutions. But still HTML is an intermediary format</p></li>
+         <li>
+          <p>[REF] If somebody is interested, probably the most well-known are Antenna Publisher, Oxygen</p></li>
         </ul>
        </div>
-       <div class="admonitionblock warning fragment">
-        <table>
-         <tbody>
-          <tr>
-           <td class="icon"><i class="fa fa-warning" title="Warning"></i></td>
-           <td class="content">
-            <div class="paragraph">
-             <p>These technologies are not aligned in a great number of details like:</p>
-            </div>
-            <div class="ulist">
-             <ul>
-              <li>
-               <p>Apache FOP has problems with Leader alignment (dots in a table of contents)</p></li>
-              <li>
-               <p>LO Writer doesn’t support typography (like keep with next) within table cells</p></li>
-              <li>
-               <p>Microsoft doesn’t recommend running automation tasks (like saving PDF) on a server</p></li>
-             </ul>
-            </div></td>
-          </tr>
-         </tbody>
-        </table>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a2">
+     <h2>Most widespread rendering approaches</h2>
+     <div class="slide-content">
+      <div class="ulist">
+       <ul>
+        <li class="fragment">
+         <p>PDF ← native PDF-generating libraries</p></li>
+        <li class="fragment">
+         <p>PDF ← XSL-FO with FOP-processors</p></li>
+        <li class="fragment">
+         <p>PDF ← via TeX</p></li>
+        <li class="fragment">
+         <p>PDF ← HTML + Paged Media CSS</p></li>
+        <li class="fragment">
+         <p>DOCX/ODT, PDF ← +/- text processors (MS Word, LO Writer)</p></li>
+       </ul>
+      </div>
+      <div class="admonitionblock warning fragment">
+       <table>
+        <tbody>
+         <tr>
+          <td class="icon"><i class="fa fa-warning" title="Warning"></i></td>
+          <td class="content">
+           <div class="paragraph">
+            <p>These technologies are not aligned in a great number of details like:</p>
+           </div>
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>Apache FOP has problems with Leader alignment (dots in a table of contents)</p></li>
+             <li>
+              <p>LO Writer doesn’t support typography (like keep with next) within table cells</p></li>
+             <li>
+              <p>Microsoft doesn’t recommend running automation tasks (like saving PDF) on a server</p></li>
+            </ul>
+           </div></td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+      <aside class="notes">
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>There are others, but these cover most cases</p></li>
+         <li>
+          <p>[REF] Native libraries examples: ReportLab in Python, Prawn in Ruby, PDFBox in Java</p></li>
+         <li>
+          <p>[REF] You can see Leader Problems in UniDoc Publisher documentation</p></li>
+         <li>
+          <p>[REF] <a href="https://support.microsoft.com/en-us/topic/considerations-for-server-side-automation-of-office-48bcfe93-8a89-47f1-0bce-017433ad79e2" class="bare">https://support.microsoft.com/en-us/topic/considerations-for-server-side-automation-of-office-48bcfe93-8a89-47f1-0bce-017433ad79e2</a></p></li>
+        </ul>
        </div>
-       <aside class="notes">
-        <div class="ulist">
-         <ul>
-          <li>
-           <p>There are others, but these cover most cases</p></li>
-          <li>
-           <p>[REF] Native libraries examples: ReportLab in Python, Prawn in Ruby, PDFBox in Java</p></li>
-          <li>
-           <p>[REF] You can see Leader Problems in UniDoc Publisher documentation</p></li>
-          <li>
-           <p>[REF] <a href="https://support.microsoft.com/en-us/topic/considerations-for-server-side-automation-of-office-48bcfe93-8a89-47f1-0bce-017433ad79e2" class="bare">https://support.microsoft.com/en-us/topic/considerations-for-server-side-automation-of-office-48bcfe93-8a89-47f1-0bce-017433ad79e2</a></p></li>
-         </ul>
-        </div>
-       </aside>
-      </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
+      </aside>
+     </div>
      <div class="twd1">
       <div>
        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
@@ -1000,61 +993,60 @@ pre.rouge {
       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
      </div>
     </section>
-    <section>
-     <section id="a9">
-      <h2>In search for flexibility: Asciidoctor open document</h2>
-      <div class="slide-content">
-       <div class="openblock">
-        <div class="title">
-         Automation on the writer side
-        </div>
-        <div class="content">
-         <div class="olist arabic">
-          <ol class="arabic">
-           <li class="fragment">
-            <p>Asciidoctor parses markup into AST (Abstract Syntax Tree)</p></li>
-           <li class="fragment">
-            <p>You may transform AST with Asciidoctor tree processor</p></li>
-           <li class="fragment">
-            <p>Asciidoctor runs writer template for each AST node recursively</p></li>
-           <li class="fragment">
-            <p>You may override writer with pure Ruby or with special Slim templates</p></li>
-          </ol>
-         </div>
+    <section id="a9">
+     <h2>In search for flexibility: Asciidoctor open document</h2>
+     <div class="slide-content">
+      <div class="openblock">
+       <div class="title">
+        Automation on the writer side
+       </div>
+       <div class="content">
+        <div class="olist arabic">
+         <ol class="arabic">
+          <li class="fragment">
+           <p>Asciidoctor parses markup into AST (Abstract Syntax Tree)</p></li>
+          <li class="fragment">
+           <p>You may transform AST with Asciidoctor tree processor</p></li>
+          <li class="fragment">
+           <p>Asciidoctor runs writer template for each AST node recursively</p></li>
+          <li class="fragment">
+           <p>You may override writer with pure Ruby or with special Slim templates</p></li>
+         </ol>
         </div>
        </div>
-       <aside class="notes">
-        <div class="ulist">
-         <ul>
-          <li>
-           <p>First idea was to follow Asciidoctor ways, and these proved to be working ways</p></li>
-          <li>
-           <p>[REF] Asciidoctor tree processor doesn’t allow to work with inline contents</p></li>
-         </ul>
-        </div>
-       </aside>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a301">
-      <h2>A simplified processing AST example</h2>
-      <div class="slide-content">
-       <table class="tableblock frame-all grid-all" style="width:100%">
-        <colgroup>
-         <col style="width:40%">
-         <col style="width:60%">
-        </colgroup>
-        <tbody>
-         <tr>
-          <td class="tableblock halign-left valign-top">
-           <div>
-            <div class="listingblock">
-             <div class="content">
-              <pre class="rouge highlight"><code data-lang="yaml"><span class="pi">-</span> <span class="kt">!&lt;OrderedList&gt;</span>
+      <aside class="notes">
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>First idea was to follow Asciidoctor ways, and these proved to be working ways</p></li>
+         <li>
+          <p>[REF] Asciidoctor tree processor doesn’t allow to work with inline contents</p></li>
+        </ul>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a301">
+     <h2>A simplified processing AST example</h2>
+     <div class="slide-content">
+      <table class="tableblock frame-all grid-all" style="width:100%">
+       <colgroup>
+        <col style="width:40%">
+        <col style="width:60%">
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="rouge highlight"><code data-lang="yaml"><span class="pi">-</span> <span class="kt">!&lt;OrderedList&gt;</span>
   <span class="na">roles</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s2">"</span><span class="s">arabic"</span>
   <span class="na">id</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ol-1"</span>
@@ -1071,14 +1063,14 @@ pre.rouge {
         <span class="na">text</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Asciidoctor..."</span>
   <span class="pi">-</span> <span class="kt">!&lt;ListItem&gt;</span>
 <span class="nn">...</span></code></pre>
-             </div>
             </div>
-           </div></td>
-          <td class="tableblock halign-left valign-top">
-           <div>
-            <div class="listingblock">
-             <div class="content">
-              <pre class="rouge highlight"><code data-lang="slim"><span class="p">-</span> <span class="n">list_style</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">get_basic_style</span><span class="si">}</span><span class="s2"> ordered-list"</span>
+           </div>
+          </div></td>
+         <td class="tableblock halign-left valign-top">
+          <div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="rouge highlight"><code data-lang="slim"><span class="p">-</span> <span class="n">list_style</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">get_basic_style</span><span class="si">}</span><span class="s2"> ordered-list"</span>
 <span class="p">-</span> <span class="k">if</span> <span class="n">captioned_title?</span>
   <span class="nt">text</span>:p<span class="w"> </span>text:<span class="na">style-name</span><span class="p">=</span><span class="s">"#{list_style}"</span>
     <span class="nt">text</span>:bookmark<span class="w"> </span>text:<span class="na">name</span><span class="p">=</span><span class="s">"#{id}"</span>
@@ -1087,270 +1079,256 @@ pre.rouge {
 <span class="nt">text</span>:list<span class="w"> </span>text:<span class="na">style-name</span><span class="p">=</span><span class="s">"#{list_style}"</span>
   <span class="p">-</span> <span class="n">items</span><span class="p">.</span><span class="nf">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="p">,</span> <span class="n">index</span><span class="o">|</span>
   <span class="nc">...</span></code></pre>
-             </div>
             </div>
-           </div></td>
-         </tr>
-        </tbody>
-       </table>
-       <aside class="notes">
-        <div class="ulist">
-         <ul>
-          <li>
-           <p>dash means code in Ruby</p></li>
-          <li>
-           <p><code>get_basic_style</code> is some external Ruby helper function</p></li>
-         </ul>
-        </div>
-       </aside>
-      </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a10">
-      <h2>Great, but</h2>
-      <div class="slide-content">
+           </div>
+          </div></td>
+        </tr>
+       </tbody>
+      </table>
+      <aside class="notes">
        <div class="ulist">
         <ul>
-         <li class="fragment">
-          <p>You can’t override part of a template</p></li>
-         <li class="fragment">
-          <p>You should invent something for styling</p></li>
+         <li>
+          <p>dash means code in Ruby</p></li>
+         <li>
+          <p><code>get_basic_style</code> is some external Ruby helper function</p></li>
         </ul>
        </div>
-       <div class="openblock light-indent-before fragment">
-        <div class="title">
-         Styling? But text processors do support styling!
-        </div>
-        <div class="content">
-         <div class="admonitionblock warning">
-          <table>
-           <tbody>
-            <tr>
-             <td class="icon"><i class="fa fa-warning" title="Warning"></i></td>
-             <td class="content">
-              <div class="ulist">
-               <ul>
-                <li class="fragment">
-                 <p><code>&lt;span class="bold green"&gt;bold, green&lt;/span&gt;</code> — impossible to apply two styles to one element</p></li>
-               </ul>
-              </div></td>
-            </tr>
-           </tbody>
-          </table>
-         </div>
-        </div>
-       </div>
-       <div class="admonitionblock tip fragment">
-        <table>
-         <tbody>
-          <tr>
-           <td class="icon"><i class="fa fa-lightbulb-o" title="Tip"></i></td>
-           <td class="content">
-            <div class="ulist">
-             <ul>
-              <li>
-               <p>Asciidoctor Open Document uses slightly extended intermediary OD format (to preserve AST attributes)</p></li>
-              <li>
-               <p>It uses special functions that check, if style should be applied. It doesn’t know styling attributes but forces the Open Document style structure</p></li>
-             </ul>
-            </div></td>
-          </tr>
-         </tbody>
-        </table>
-       </div>
-       <aside class="notes">
-        <div class="ulist">
-         <ul>
-          <li>
-           <p>In text processors we can’t apply two styles, so we can’t leave styling to text processor template</p></li>
-          <li>
-           <p>This extended format resembles AST itself</p></li>
-         </ul>
-        </div>
-       </aside>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a10">
+     <h2>Great, but</h2>
+     <div class="slide-content">
+      <div class="ulist">
+       <ul>
+        <li class="fragment">
+         <p>You can’t override part of a template</p></li>
+        <li class="fragment">
+         <p>You should invent something for styling</p></li>
+       </ul>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a11">
-      <h2>And still</h2>
-      <div class="slide-content">
-       <div class="ulist">
-        <ul>
-         <li class="fragment">
-          <p>Unexpectedly transforming this extended Open Document format became one of the most used features of Asciidoctor Open Document</p></li>
-         <li class="fragment">
-          <p>Styling as separate task of writing proved also to be useful</p></li>
-         <li class="fragment">
-          <p>Gradle was magnificent in gluing all parts together</p></li>
-        </ul>
+      <div class="openblock light-indent-before fragment">
+       <div class="title">
+        Styling? But text processors do support styling!
        </div>
-       <aside class="notes">
-        <div class="ulist">
-         <ul>
-          <li>
-           <p>But obviously we should transform AST directly, not it’s XML representation. Pandoc clearly showed that transforming AST is very convenient. It turned out to be much more useful than expected, especially if we are dealing with print output without CSS</p></li>
-          <li>
-           <p>It is important not to output raw templates, but override only styling part</p></li>
-          <li>
-           <p>Although Asciidoctor Open Document is glued with Docker, experiments showed, that gluing with Gradle is much more controllable. Yes, finally it would be docker, but at the very end</p></li>
-         </ul>
-        </div>
-        <div class="admonitionblock tip">
+       <div class="content">
+        <div class="admonitionblock warning">
          <table>
           <tbody>
            <tr>
-            <td class="icon"><i class="fa fa-lightbulb-o" title="Tip"></i></td>
-            <td class="content">At this point, it became clear that the approach could be improved at an architectural level</td>
+            <td class="icon"><i class="fa fa-warning" title="Warning"></i></td>
+            <td class="content">
+             <div class="ulist">
+              <ul>
+               <li class="fragment">
+                <p><code>&lt;span class="bold green"&gt;bold, green&lt;/span&gt;</code> — impossible to apply two styles to one element</p></li>
+              </ul>
+             </div></td>
            </tr>
           </tbody>
          </table>
         </div>
-       </aside>
+       </div>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+      <div class="admonitionblock tip fragment">
+       <table>
+        <tbody>
+         <tr>
+          <td class="icon"><i class="fa fa-lightbulb-o" title="Tip"></i></td>
+          <td class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>Asciidoctor Open Document uses slightly extended intermediary OD format (to preserve AST attributes)</p></li>
+             <li>
+              <p>It uses special functions that check, if style should be applied. It doesn’t know styling attributes but forces the Open Document style structure</p></li>
+            </ul>
+           </div></td>
+         </tr>
+        </tbody>
+       </table>
       </div>
-     </section>
+      <aside class="notes">
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>In text processors we can’t apply two styles, so we can’t leave styling to text processor template</p></li>
+         <li>
+          <p>This extended format resembles AST itself</p></li>
+        </ul>
+       </div>
+      </aside>
+     </div>
      <div class="twd1">
       <div>
        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
      </div>
     </section>
-    <section>
-     <section id="a12">
-      <h2>Thoughts before the second step</h2>
-      <div class="slide-content">
+    <section id="a11">
+     <h2>And still</h2>
+     <div class="slide-content">
+      <div class="ulist">
+       <ul>
+        <li class="fragment">
+         <p>Unexpectedly transforming this extended Open Document format became one of the most used features of Asciidoctor Open Document</p></li>
+        <li class="fragment">
+         <p>Styling as separate task of writing proved also to be useful</p></li>
+        <li class="fragment">
+         <p>Gradle was magnificent in gluing all parts together</p></li>
+       </ul>
+      </div>
+      <aside class="notes">
        <div class="ulist">
         <ul>
-         <li class="fragment">
-          <p>If creating universal converter is impossible…​</p></li>
-         <li class="fragment">
-          <p>We should create <strong>meta converter</strong> — platform for building converters</p></li>
+         <li>
+          <p>But obviously we should transform AST directly, not it’s XML representation. Pandoc clearly showed that transforming AST is very convenient. It turned out to be much more useful than expected, especially if we are dealing with print output without CSS</p></li>
+         <li>
+          <p>It is important not to output raw templates, but override only styling part</p></li>
+         <li>
+          <p>Although Asciidoctor Open Document is glued with Docker, experiments showed, that gluing with Gradle is much more controllable. Yes, finally it would be docker, but at the very end</p></li>
         </ul>
        </div>
-       <div class="openblock indent-before fragment">
-        <div class="title">
-         Estimated requirements
-        </div>
-        <div class="content">
-         <div class="ulist">
-          <ul>
-           <li class="fragment">
-            <p>Native converter as a reader</p></li>
-           <li class="fragment">
-            <p>Sound ways of transforming AST</p></li>
-           <li class="fragment">
-            <p>A good approach for styling as a separate focus</p></li>
-           <li class="fragment">
-            <p>99% generic writer</p></li>
-           <li class="fragment">
-            <p>Good integration with CI/CD with a focus on homogeneity</p></li>
-          </ul>
-         </div>
-        </div>
-       </div>
-       <aside class="notes">
-        <div class="paragraph">
-         <p>Close to Pandoc but with a focus on native converter, style overriding and CI/CD homogeneity</p>
-        </div>
-       </aside>
-      </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a200">
-      <h2>Native converter as a reader?</h2>
-      <div class="slide-content">
-       <div class="admonitionblock tip fragment">
+       <div class="admonitionblock tip">
         <table>
          <tbody>
           <tr>
            <td class="icon"><i class="fa fa-lightbulb-o" title="Tip"></i></td>
-           <td class="content">Each converter outputs HTML. HTML is quite semantic, why shouldn’t we use it?</td>
+           <td class="content">At this point, it became clear that the approach could be improved at an architectural level</td>
           </tr>
          </tbody>
         </table>
        </div>
-      </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
+      </aside>
+     </div>
      <div class="twd1">
       <div>
        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
      </div>
     </section>
-    <section>
-     <section id="a105">
-      <h2>Let’s convert this presentation to LO Writer</h2>
-      <div class="slide-content">
-       <div class="imageblock">
-        <img src="images/slide-1-to-print.png" alt="slide 1 to print" width="58%">
-       </div>
-       <aside class="notes">
-        <div class="paragraph">
-         <p>This presentation is created with Asciidoctor Reveal.js, so we can convert it to document with notes</p>
-        </div>
-       </aside>
+    <section id="a12">
+     <h2>Thoughts before the second step</h2>
+     <div class="slide-content">
+      <div class="ulist">
+       <ul>
+        <li class="fragment">
+         <p>If creating universal converter is impossible…​</p></li>
+        <li class="fragment">
+         <p>We should create <strong>meta converter</strong> — platform for building converters</p></li>
+       </ul>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a306">
-      <h2>Notes on this demo</h2>
-      <div class="slide-content">
-       <div class="ulist">
-        <ul>
-         <li class="fragment">
-          <p>All conversion settings are written in Kotlin</p></li>
-         <li class="fragment">
-          <p>Everything is in a single Gradle script (<code>build.gradle.kts</code>)</p></li>
-         <li class="fragment">
-          <p>The following code listings are excerpts from this script</p></li>
-        </ul>
+      <div class="openblock indent-before fragment">
+       <div class="title">
+        Estimated requirements
        </div>
-       <aside class="notes">
+       <div class="content">
         <div class="ulist">
          <ul>
-          <li>
-           <p>Instead of Gradle script it can be just an ordinary Java/Kotlin project, with a CLI or a web service utility as an output</p></li>
+          <li class="fragment">
+           <p>Native converter as a reader</p></li>
+          <li class="fragment">
+           <p>Sound ways of transforming AST</p></li>
+          <li class="fragment">
+           <p>A good approach for styling as a separate focus</p></li>
+          <li class="fragment">
+           <p>99% generic writer</p></li>
+          <li class="fragment">
+           <p>Good integration with CI/CD with a focus on homogeneity</p></li>
          </ul>
         </div>
-       </aside>
+       </div>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+      <aside class="notes">
+       <div class="paragraph">
+        <p>Close to Pandoc but with a focus on native converter, style overriding and CI/CD homogeneity</p>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a200">
+     <h2>Native converter as a reader?</h2>
+     <div class="slide-content">
+      <div class="admonitionblock tip fragment">
+       <table>
+        <tbody>
+         <tr>
+          <td class="icon"><i class="fa fa-lightbulb-o" title="Tip"></i></td>
+          <td class="content">Each converter outputs HTML. HTML is quite semantic, why shouldn’t we use it?</td>
+         </tr>
+        </tbody>
+       </table>
       </div>
-     </section>
-     <section id="a106">
-      <h2>Boilerplate</h2>
-      <div class="slide-content">
-       <div class="listingblock">
-        <div class="content">
-         <pre class="rouge highlight"><code data-lang="kotlin"><span class="nc">FodtConverter</span> <span class="p">{</span>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a105">
+     <h2>Let’s convert this presentation to LO Writer</h2>
+     <div class="slide-content">
+      <div class="imageblock">
+       <img src="images/slide-1-to-print.png" alt="slide 1 to print" width="58%">
+      </div>
+      <aside class="notes">
+       <div class="paragraph">
+        <p>This presentation is created with Asciidoctor Reveal.js, so we can convert it to document with notes</p>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a306">
+     <h2>Notes on this demo</h2>
+     <div class="slide-content">
+      <div class="ulist">
+       <ul>
+        <li class="fragment">
+         <p>All conversion settings are written in Kotlin</p></li>
+        <li class="fragment">
+         <p>Everything is in a single Gradle script (<code>build.gradle.kts</code>)</p></li>
+        <li class="fragment">
+         <p>The following code listings are excerpts from this script</p></li>
+       </ul>
+      </div>
+      <aside class="notes">
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>Instead of Gradle script it can be just an ordinary Java/Kotlin project, with a CLI or a web service utility as an output</p></li>
+        </ul>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a106">
+     <h2>Boilerplate</h2>
+     <div class="slide-content">
+      <div class="listingblock">
+       <div class="content">
+        <pre class="rouge highlight"><code data-lang="kotlin"><span class="nc">FodtConverter</span> <span class="p">{</span>
     <span class="n">html</span> <span class="p">=</span> <span class="nc">AsciidocHtmlFactory</span><span class="p">()</span>
         <span class="p">.</span><span class="nf">getHtmlFromFile</span><span class="p">(</span><span class="nc">File</span><span class="p">(</span><span class="s">"${project.projectDir}/$presentationFile.adoc"</span><span class="p">),</span> <span class="k">true</span><span class="p">)</span>
     <span class="n">template</span> <span class="p">=</span> <span class="nc">File</span><span class="p">(</span><span class="s">"${project.projectDir}/template-1.fodt"</span><span class="p">).</span><span class="nf">readText</span><span class="p">()</span>
@@ -1360,60 +1338,60 @@ pre.rouge {
             <span class="c1">// Processing AST</span>
     <span class="nf">ast2fodt</span><span class="p">()</span>
 <span class="p">}</span></code></pre>
-        </div>
        </div>
-       <aside class="notes">
-        <div class="ulist">
-         <ul>
-          <li>
-           <p>Asciidoctor is a part of a Gradle build</p></li>
-          <li>
-           <p>The project starts not from Asciidoctor HTML, but from Reveal.js Asciidoctor HTML to make notes contents closer to slides and as a proof of concept. The technology has a safety margin against any HTML: Asciidoc HTML, Asciidoc Reveal.js HTML, MD, Wiki, ReST…​</p></li>
-          <li>
-           <p>The boilerplate is quite minimalistic</p></li>
-         </ul>
-        </div>
-       </aside>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a107">
-      <h2>Processing AST</h2>
-      <div class="slide-content">
-       <div class="listingblock">
-        <div class="content">
-         <pre class="rouge highlight"><code data-lang="kotlin"><span class="nf">ast</span><span class="p">().</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">section</span> <span class="p">-&gt;</span>
+      <aside class="notes">
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>Asciidoctor is a part of a Gradle build</p></li>
+         <li>
+          <p>The project starts not from Asciidoctor HTML, but from Reveal.js Asciidoctor HTML to make notes contents closer to slides and as a proof of concept. The technology has a safety margin against any HTML: Asciidoc HTML, Asciidoc Reveal.js HTML, MD, Wiki, ReST…​</p></li>
+         <li>
+          <p>The boilerplate is quite minimalistic</p></li>
+        </ul>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a107">
+     <h2>Processing AST</h2>
+     <div class="slide-content">
+      <div class="listingblock">
+       <div class="content">
+        <pre class="rouge highlight"><code data-lang="kotlin"><span class="nf">ast</span><span class="p">().</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">section</span> <span class="p">-&gt;</span>
     <span class="n">section</span><span class="p">.</span><span class="n">sourceTagName</span> <span class="p">==</span> <span class="s">"section"</span> <span class="p">&amp;&amp;</span>
             <span class="n">section</span><span class="p">.</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span> <span class="k">is</span> <span class="nc">Heading</span> <span class="p">&amp;&amp;</span> <span class="n">it</span><span class="p">.</span><span class="n">level</span> <span class="p">==</span> <span class="mi">1</span> <span class="p">}</span>
                 <span class="p">.</span><span class="nf">isNotEmpty</span><span class="p">()</span>
 <span class="p">}.</span><span class="nf">first</span><span class="p">().</span><span class="nf">also</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="nf">insertBefore</span><span class="p">(</span><span class="nf">makeTitle</span><span class="p">(</span><span class="n">it</span><span class="p">))</span> <span class="p">}.</span><span class="nf">remove</span><span class="p">()</span></code></pre>
-        </div>
        </div>
-       <aside class="notes">
-        <div class="paragraph">
-         <p>Typical AST transforming code. Typed, navigable, and testable</p>
-        </div>
-        <div class="paragraph">
-         <p>Here we find section with level 1 heading (title slide), then insert before it the transformed version, and finally remove the old version</p>
-        </div>
-       </aside>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a108">
-      <h2>Rearranging title (Asciidoc source)</h2>
-      <div class="slide-content">
-       <div class="listingblock">
-        <div class="content">
-         <pre class="rouge highlight"><code data-lang="asciidoc">|===
+      <aside class="notes">
+       <div class="paragraph">
+        <p>Typical AST transforming code. Typed, navigable, and testable</p>
+       </div>
+       <div class="paragraph">
+        <p>Here we find section with level 1 heading (title slide), then insert before it the transformed version, and finally remove the old version</p>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a108">
+     <h2>Rearranging title (Asciidoc source)</h2>
+     <div class="slide-content">
+      <div class="listingblock">
+       <div class="content">
+        <pre class="rouge highlight"><code data-lang="asciidoc">|===
 a|
 [.title-photo]
 image::images/nmp1.jpg[]
@@ -1430,26 +1408,26 @@ image::images/fosdem-logo.svg[]
 [.contact]
 icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
 |===</code></pre>
-        </div>
        </div>
-       <aside class="notes">
-        <div class="paragraph">
-         <p>All elements have roles</p>
-        </div>
-       </aside>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a109">
-      <h2>Rearranging title, extracting semantics</h2>
-      <div class="slide-content">
-       <div class="listingblock">
-        <div class="content">
-         <pre class="rouge highlight"><code data-lang="kotlin"><span class="kd">val</span> <span class="py">title</span> <span class="p">=</span> <span class="n">titleSlideSection</span><span class="p">.</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span> <span class="k">is</span> <span class="nc">Heading</span> <span class="p">&amp;&amp;</span> <span class="n">it</span><span class="p">.</span><span class="n">level</span> <span class="p">==</span> <span class="mi">1</span> <span class="p">}.</span><span class="nf">first</span><span class="p">()</span>
+      <aside class="notes">
+       <div class="paragraph">
+        <p>All elements have roles</p>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a109">
+     <h2>Rearranging title, extracting semantics</h2>
+     <div class="slide-content">
+      <div class="listingblock">
+       <div class="content">
+        <pre class="rouge highlight"><code data-lang="kotlin"><span class="kd">val</span> <span class="py">title</span> <span class="p">=</span> <span class="n">titleSlideSection</span><span class="p">.</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span> <span class="k">is</span> <span class="nc">Heading</span> <span class="p">&amp;&amp;</span> <span class="n">it</span><span class="p">.</span><span class="n">level</span> <span class="p">==</span> <span class="mi">1</span> <span class="p">}.</span><span class="nf">first</span><span class="p">()</span>
 <span class="kd">val</span> <span class="py">notes</span> <span class="p">=</span> <span class="n">titleSlideSection</span><span class="p">.</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">sourceTagName</span> <span class="p">==</span> <span class="s">"aside"</span> <span class="p">}.</span><span class="nf">first</span><span class="p">()</span>
 <span class="kd">val</span> <span class="p">(</span><span class="py">fullName</span><span class="p">,</span> <span class="py">bio</span><span class="p">,</span> <span class="py">photo</span><span class="p">,</span> <span class="py">contact</span><span class="p">,</span> <span class="py">logo</span><span class="p">)</span> <span class="p">=</span>
     <span class="nf">arrayOf</span><span class="p">(</span><span class="s">"full-name"</span><span class="p">,</span> <span class="s">"bio"</span><span class="p">,</span> <span class="s">"title-photo"</span><span class="p">,</span> <span class="s">"contact"</span><span class="p">,</span> <span class="s">"logo"</span><span class="p">)</span>
@@ -1459,26 +1437,26 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
     <span class="p">.</span><span class="n">width</span> <span class="p">=</span> <span class="nc">Length</span><span class="p">(</span><span class="mf">1000F</span><span class="p">,</span> <span class="nc">LengthUnit</span><span class="p">.</span><span class="n">cmm</span><span class="p">)</span>
 <span class="n">photo</span><span class="p">.</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span> <span class="k">is</span> <span class="nc">Image</span> <span class="p">}.</span><span class="nf">first</span><span class="p">().</span><span class="nf">let</span> <span class="p">{</span> <span class="n">it</span> <span class="k">as</span> <span class="nc">Image</span> <span class="p">}</span>
     <span class="p">.</span><span class="n">width</span> <span class="p">=</span> <span class="nc">Length</span><span class="p">(</span><span class="mf">1500F</span><span class="p">,</span> <span class="nc">LengthUnit</span><span class="p">.</span><span class="n">cmm</span><span class="p">)</span></code></pre>
-        </div>
        </div>
-       <aside class="notes">
-        <div class="paragraph">
-         <p>Looks like XPath but once again typed, navigable, and testable</p>
-        </div>
-       </aside>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a110">
-      <h2>Rearranging title, constructing title</h2>
-      <div class="slide-content">
-       <div class="listingblock">
-        <div class="content">
-         <pre class="rouge highlight"><code data-lang="kotlin"><span class="nf">appendChild</span><span class="p">(</span><span class="n">logo</span><span class="p">)</span>
+      <aside class="notes">
+       <div class="paragraph">
+        <p>Looks like XPath but once again typed, navigable, and testable</p>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a110">
+     <h2>Rearranging title, constructing title</h2>
+     <div class="slide-content">
+      <div class="listingblock">
+       <div class="content">
+        <pre class="rouge highlight"><code data-lang="kotlin"><span class="nf">appendChild</span><span class="p">(</span><span class="n">logo</span><span class="p">)</span>
 <span class="nf">appendChild</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
 <span class="nf">table</span> <span class="p">{</span>
     <span class="nf">col</span><span class="p">(</span><span class="nc">Length</span><span class="p">(</span><span class="mf">18F</span><span class="p">));</span> <span class="nf">col</span><span class="p">(</span><span class="nc">Length</span><span class="p">(</span><span class="mf">152F</span><span class="p">))</span>
@@ -1493,44 +1471,44 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
 <span class="nf">appendChild</span><span class="p">(</span><span class="n">notes</span><span class="p">)</span>
 <span class="nf">appendChild</span><span class="p">(</span><span class="nc">Toc</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">"List of slides"</span><span class="p">))</span>
 <span class="nf">normalizeImageDimensions</span><span class="p">()</span></code></pre>
-        </div>
        </div>
-       <aside class="notes">
-        <div class="paragraph">
-         <p>Rearranging looks like Slim (or XSLT) templates. Not so slim as Slim, but definitely slimmer than XSLT</p>
-        </div>
-       </aside>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a309">
-      <h2>Back return to the result</h2>
-      <div class="slide-content">
-       <div class="imageblock">
-        <img src="images/slide-1-to-print.png" alt="slide 1 to print" width="58%">
+      <aside class="notes">
+       <div class="paragraph">
+        <p>Rearranging looks like Slim (or XSLT) templates. Not so slim as Slim, but definitely slimmer than XSLT</p>
        </div>
-       <aside class="notes">
-        <div class="paragraph">
-         <p>An epigraph appeared from the second slide. You may look at <code>build.gradle.kts</code> and find out how. But it is a very common task when we render printing version of a document</p>
-        </div>
-       </aside>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a309">
+     <h2>Back return to the result</h2>
+     <div class="slide-content">
+      <div class="imageblock">
+       <img src="images/slide-1-to-print.png" alt="slide 1 to print" width="58%">
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a201">
-      <h2>Styling</h2>
-      <div class="slide-content">
-       <div class="listingblock">
-        <div class="content">
-         <pre class="rouge highlight"><code data-lang="kotlin"><span class="nc">OdtStyle</span> <span class="p">{</span> <span class="n">p</span> <span class="p">-&gt;</span>
+      <aside class="notes">
+       <div class="paragraph">
+        <p>An epigraph appeared from the second slide. You may look at <code>build.gradle.kts</code> and find out how. But it is a very common task when we render printing version of a document</p>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a201">
+     <h2>Styling</h2>
+     <div class="slide-content">
+      <div class="listingblock">
+       <div class="content">
+        <pre class="rouge highlight"><code data-lang="kotlin"><span class="nc">OdtStyle</span> <span class="p">{</span> <span class="n">p</span> <span class="p">-&gt;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="p">!</span><span class="k">is</span> <span class="nc">Paragraph</span><span class="p">)</span> <span class="k">return</span><span class="nd">@OdtStyle</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">ancestor</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">roles</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"logo"</span><span class="p">)</span> <span class="p">}.</span><span class="nf">isEmpty</span><span class="p">())</span> <span class="k">return</span><span class="nd">@OdtStyle</span>
     <span class="nf">attributes</span><span class="p">(</span><span class="s">"style:master-page-name"</span> <span class="n">to</span> <span class="s">"First_20_Page"</span><span class="p">)</span>
@@ -1543,26 +1521,26 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
             <span class="p">.</span><span class="nf">forEach</span> <span class="p">{</span> <span class="nf">attributes</span><span class="p">(</span><span class="s">"fo:border-$it"</span> <span class="n">to</span> <span class="s">"none"</span><span class="p">)</span> <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">},</span></code></pre>
-        </div>
        </div>
-       <aside class="notes">
-        <div class="paragraph">
-         <p>Programmable, but overrides only styling. As mentioned before UniDoc Publisher doesn’t know about styling attributes, but it ensures the structure of a style</p>
-        </div>
-       </aside>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a112">
-      <h2>Some more AST processing</h2>
-      <div class="slide-content">
-       <div class="listingblock">
-        <div class="content">
-         <pre class="rouge highlight"><code data-lang="kotlin"><span class="nf">ast</span><span class="p">().</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">roles</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"notes"</span><span class="p">)</span> <span class="p">}</span>
+      <aside class="notes">
+       <div class="paragraph">
+        <p>Programmable, but overrides only styling. As mentioned before UniDoc Publisher doesn’t know about styling attributes, but it ensures the structure of a style</p>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a112">
+     <h2>Some more AST processing</h2>
+     <div class="slide-content">
+      <div class="listingblock">
+       <div class="content">
+        <pre class="rouge highlight"><code data-lang="kotlin"><span class="nf">ast</span><span class="p">().</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">roles</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"notes"</span><span class="p">)</span> <span class="p">}</span>
     <span class="p">.</span><span class="nf">forEach</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="nf">insertBefore</span><span class="p">(</span><span class="nc">HorizontalLine</span><span class="p">())</span> <span class="p">}</span> <i class="conum" data-value="1"></i><b>(1)</b>
 <span class="nf">ast</span><span class="p">().</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span> <span class="k">is</span> <span class="nc">Heading</span> <span class="p">&amp;&amp;</span> <span class="n">it</span><span class="p">.</span><span class="n">level</span> <span class="p">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
     <span class="p">.</span><span class="nf">forEach</span> <span class="p">{</span>
@@ -1572,48 +1550,48 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
     <span class="p">}</span> <i class="conum" data-value="2"></i><b>(2)</b>
 <span class="n">odtStyleList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nf">odtStyles</span><span class="p">())</span>
 <span class="n">odtStyleList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nf">rougeStyles</span><span class="p">())</span> <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
-        </div>
        </div>
-       <aside class="notes">
-        <div class="colist arabic">
-         <table>
-          <tbody>
-           <tr>
-            <td><i class="conum" data-value="1"></i><b>1</b></td>
-            <td>Inserting horizontal lines before notes</td>
-           </tr>
-           <tr>
-            <td><i class="conum" data-value="2"></i><b>2</b></td>
-            <td>Preventing slide from breaking</td>
-           </tr>
-           <tr>
-            <td><i class="conum" data-value="3"></i><b>3</b></td>
-            <td>Applying custom style and rouge code highlighting styles</td>
-           </tr>
-          </tbody>
-         </table>
-        </div>
-       </aside>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a113">
-      <h2>Extending AST</h2>
-      <div class="slide-content">
-       <div class="listingblock fragment">
-        <div class="content">
-         <pre class="rouge highlight"><code data-lang="kotlin"><span class="kd">class</span> <span class="nc">HorizontalLine</span><span class="p">()</span> <span class="p">:</span> <span class="nc">NoWriterNode</span><span class="p">()</span> <span class="p">{</span>
+      <aside class="notes">
+       <div class="colist arabic">
+        <table>
+         <tbody>
+          <tr>
+           <td><i class="conum" data-value="1"></i><b>1</b></td>
+           <td>Inserting horizontal lines before notes</td>
+          </tr>
+          <tr>
+           <td><i class="conum" data-value="2"></i><b>2</b></td>
+           <td>Preventing slide from breaking</td>
+          </tr>
+          <tr>
+           <td><i class="conum" data-value="3"></i><b>3</b></td>
+           <td>Applying custom style and rouge code highlighting styles</td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a113">
+     <h2>Extending AST</h2>
+     <div class="slide-content">
+      <div class="listingblock fragment">
+       <div class="content">
+        <pre class="rouge highlight"><code data-lang="kotlin"><span class="kd">class</span> <span class="nc">HorizontalLine</span><span class="p">()</span> <span class="p">:</span> <span class="nc">NoWriterNode</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">override</span> <span class="kd">val</span> <span class="py">isInline</span><span class="p">:</span> <span class="nc">Boolean</span> <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="k">false</span>
 <span class="p">}</span></code></pre>
-        </div>
        </div>
-       <div class="listingblock fragment">
-        <div class="content">
-         <pre class="rouge highlight"><code data-lang="kotlin"><span class="nc">OdtCustomWriter</span> <span class="p">{</span> <span class="n">horizontalLine</span> <span class="p">-&gt;</span>
+      </div>
+      <div class="listingblock fragment">
+       <div class="content">
+        <pre class="rouge highlight"><code data-lang="kotlin"><span class="nc">OdtCustomWriter</span> <span class="p">{</span> <span class="n">horizontalLine</span> <span class="p">-&gt;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">horizontalLine</span> <span class="p">!</span><span class="k">is</span> <span class="nc">HorizontalLine</span><span class="p">)</span> <span class="k">return</span><span class="nd">@OdtCustomWriter</span>
     <span class="n">preOdNode</span><span class="p">.</span><span class="nf">apply</span> <span class="p">{</span>
         <span class="s">"text:p"</span> <span class="p">{</span>
@@ -1622,49 +1600,43 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">},</span></code></pre>
-        </div>
        </div>
-       <aside class="notes">
-        <div class="ulist">
-         <ul>
-          <li>
-           <p>Extending AST is quite simple. But it is rarely used. This is artificial example, easier solution would be to add paragraph directly</p></li>
-          <li>
-           <p>The same approach lets us completely override template, but once again it is rarely used. Only if some bug in UniDoc publisher writer is found, but we don’t want to wait for a fix</p></li>
-         </ul>
-        </div>
-       </aside>
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
-     <section id="a14">
-      <h2>Testing</h2>
-      <div class="slide-content">
-       <div class="imageblock">
-        <img src="images/approval.png" alt="approval" width="100%">
+      <aside class="notes">
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>Extending AST is quite simple. But it is rarely used. This is artificial example, easier solution would be to add paragraph directly</p></li>
+         <li>
+          <p>The same approach lets us completely override template, but once again it is rarely used. Only if some bug in UniDoc publisher writer is found, but we don’t want to wait for a fix</p></li>
+        </ul>
        </div>
-       <aside class="notes">
-        <div class="paragraph">
-         <p>If we have Asciidoctor with some Printing converter platform on top and Converter on top, we should be sure, that minor changes won’t break anything</p>
-        </div>
-        <div class="paragraph">
-         <p>I use the system of snippets, render them into PNG and compare by pixels with reference. Almost 100% guarantee.</p>
-        </div>
-        <div class="paragraph">
-         <p>By the way, these snippets can be put into documentation. These are real cases of usage.</p>
-        </div>
-       </aside>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a14">
+     <h2>Testing</h2>
+     <div class="slide-content">
+      <div class="imageblock">
+       <img src="images/approval.png" alt="approval" width="100%">
       </div>
-      <div class="twd1">
-       <div>
-        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-      </div>
-     </section>
+      <aside class="notes">
+       <div class="paragraph">
+        <p>If we have Asciidoctor with some Printing converter platform on top and Converter on top, we should be sure, that minor changes won’t break anything</p>
+       </div>
+       <div class="paragraph">
+        <p>I use the system of snippets, render them into PNG and compare by pixels with reference. Almost 100% guarantee.</p>
+       </div>
+       <div class="paragraph">
+        <p>By the way, these snippets can be put into documentation. These are real cases of usage.</p>
+       </div>
+      </aside>
+     </div>
      <div class="twd1">
       <div>
        Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It

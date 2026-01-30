@@ -49,7 +49,7 @@ import model.Table
 import model.Toc
 import writer.tableProperties
 
-version = "1.0.1"
+version = "1.1.0"
 val presentationFile = "fosdem-printing"
 
 buildscript {
@@ -233,7 +233,7 @@ val fodt2All = tasks.register<Exec>("fodt2All") {
         "kotlin",
         "lo-kts-converter.main.kts",
         "-i",
-        "output/fosdem-printing-notes-v1.0.1.fodt",
+        "output/fosdem-printing-notes-v$version.fodt",
         "-f",
         "pdf,docx,odt"
     )
