@@ -182,7 +182,7 @@ fun convert(): FodtConverter =
             section.sourceTagName == "section" &&
                     section.descendant { it is Heading && it.level == 1 }
                         .isNotEmpty()
-        }.first().also { it.insertBefore(makeTitle(it)) }.remove() // <1>
+        }.first().also { it.insertBefore(makeTitle(it)) }.remove()
         // end::orchestration-rebuild-title[]
         // Insert epigraph after title
         ast().descendant { it.roles.contains("about-me") }.first().apply {
@@ -194,8 +194,8 @@ fun convert(): FodtConverter =
             insertBefore(Paragraph().apply { roles("attribution"); +attribution })
         }
         // tag::orchestration-other[]
-        ast().descendant { it.roles.contains("notes") } // <1>
-            .forEach { it.insertBefore(HorizontalLine()) }
+        ast().descendant { it.roles.contains("notes") }
+            .forEach { it.insertBefore(HorizontalLine()) } // <1>
         ast().descendant { it is Heading && it.level > 1 }
             .forEach {
                 it.insertBefore(
@@ -342,7 +342,7 @@ fun String.langToolsCheck() {
                     "ReST",
                     "XPath",
                     "DocOps",
-                    "DummyDummy"
+                    "OD"
                 )
             )
             ruleExceptions = setOf(

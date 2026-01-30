@@ -188,15 +188,16 @@ I'm too!
 --
 [%step]
 . Asciidoctor parses markup into AST (Abstract Syntax Tree)
-. You may transform AST with Asciidoctor AST processing
+. You may transform AST with Asciidoctor tree processor
 . Asciidoctor runs writer template for each AST node recursively
-. You may write your code in pure Ruby or with special Slim templates
+. You may override writer with pure Ruby or with special Slim templates
 --
 
 
 [.notes]
 --
 * First idea was to follow Asciidoctor ways, and these proved to be working ways
+* [REF] Asciidoctor tree processor doesn't allow to work with inline contents
 --
 
 [[a301]]
@@ -229,7 +230,7 @@ a|
 a|
 [source,slim]
 ----
-- list_style = "#{get_basic_style}"
+- list_style = "#{get_basic_style} ordered-list"
 - if captioned_title?
   text:p text:style-name="#{list_style}"
     text:bookmark text:name="#{id}"
@@ -237,13 +238,14 @@ a|
 
 text:list text:style-name="#{list_style}"
   - items.each_with_index do \|item, index\|
+  ...
 ----
 |===
 
 [.notes]
 --
 * dash means code in Ruby
-* `get_basic_style` is some external function, defined as a helper, so Ruby can be used within template
+* `get_basic_style` is some external Ruby helper function
 --
 
 [[a10]]
@@ -251,9 +253,9 @@ text:list text:style-name="#{list_style}"
 
 [%step]
 * You can't override part of a template
-* You should invent styling approach
+* You should invent something for styling
 
-[%step.indent-before]
+[%step.light-indent-before]
 .Styling? But text processors do support styling!
 --
 [WARNING]
@@ -266,8 +268,8 @@ text:list text:style-name="#{list_style}"
 [%step]
 [TIP]
 ====
-* Asciidoctor Open Document introduces some extended Open Document format to preserve Asciidoctor AST contents
-* Each function checks, if style should be applied, and if yes, applies it in a more or less OpenDocument way: doesn't understand styling attributes but forces the style structure
+* Asciidoctor Open Document uses slightly extended intermediary OD format (to preserve AST attributes)
+* It uses special functions that check, if style should be applied. It doesn't know styling attributes but forces the Open Document style structure
 ====
 
 [.notes]
@@ -286,9 +288,9 @@ text:list text:style-name="#{list_style}"
 
 [.notes]
 --
-* But obviously while we should transform AST directly, not it's XML representation. Pandoc clearly showed that transforming AST is very convenient. It turned out to be much more useful than expected, especially if we are dealing with print output without CSS
+* But obviously we should transform AST directly, not it's XML representation. Pandoc clearly showed that transforming AST is very convenient. It turned out to be much more useful than expected, especially if we are dealing with print output without CSS
 * It is important not to output raw templates, but override only styling part
-* Although Asciidoctor Open Document is glued with Docker, my experiments showed, that gluing with Gradle is much more controllable. Yes, finally it would be docker, but at the very end
+* Although Asciidoctor Open Document is glued with Docker, experiments showed, that gluing with Gradle is much more controllable. Yes, finally it would be docker, but at the very end
 
 TIP: At this point, it became clear that the approach could be improved at an architectural level
 --
@@ -337,12 +339,13 @@ This presentation is created with Asciidoctor Reveal.js, so we can convert it to
 === Notes on this demo
 
 [%step]
+* All conversion settings are written in Kotlin
 * Everything is in a single Gradle script (`build.gradle.kts`)
-* All Kotlin code examples are just includes from this script
+* The following code listings are excerpts from this script
 
 [.notes]
 --
-Instead of Gradle script it can be just an ordinary Java/Kotlin project, with a CLI or even service utility as an output
+* Instead of Gradle script it can be just an ordinary Java/Kotlin project, with a CLI or a web service utility as an output
 --
 
 [[a106]]
@@ -374,7 +377,7 @@ include::build.gradle.kts[tag=orchestration-rebuild-title]
 --
 Typical AST transforming code. Typed, navigable, and testable
 
-Here we find section with H1 heading (title slide), and insert before it the transformed version, then remove old version
+Here we find section with level 1 heading (title slide), then insert before it the transformed version, and finally remove the old version
 --
 
 [[a108]]
@@ -417,7 +420,7 @@ Rearranging looks like Slim (or XSLT) templates. Not so slim as Slim, but defini
 --
 
 [[a309]]
-=== Let's return to the result
+=== Back return to the result
 
 image::images/slide-1-to-print.png[width=58%]
 
@@ -427,7 +430,7 @@ An epigraph appeared from the second slide. You may look at `build.gradle.kts` a
 --
 
 [[a201]]
-=== And a little bit of styling
+=== Styling
 
 [source,kotlin,indent=0]
 ----
@@ -440,7 +443,7 @@ Programmable, but overrides only styling. As mentioned before UniDoc Publisher d
 --
 
 [[a112]]
-=== Now let's return to processing AST
+=== Some more AST processing
 
 [source,kotlin,indent=0]
 ----
@@ -453,7 +456,8 @@ include::build.gradle.kts[tag=orchestration-other]
 <2> Preventing slide from breaking
 <3> Applying custom style and rouge code highlighting styles
 
-Rouge styles are generated automatically from rouge.css. The code is in `build.gradle.kts` -- just about 20 lines. Using CSS for each rendering technology is really useful in many cases
+* Rouge styles are generated automatically from rouge.css. The code is in `build.gradle.kts` -- just about 20 lines. Using CSS for each rendering technology is really useful in many cases
+* Styling approach to prevent each slide from breaking is the same
 --
 
 [[a113]]
@@ -499,11 +503,13 @@ By the way, these snippets can be put into documentation. These are real cases o
 * No declarations, everything should be programmed
 * Typed AST -- check before run
 * Clean and testable code
-* One AST and one styling approach, but different styling typed API for each backend
+* One AST and one styling approach, but different styling API for each backend
 
 [.notes]
 --
 Once again about focus and trade-offs, but after the demo
+
+[REF] Styling implementation for other formats can be looked at in the UniDoc Publisher documentation sources
 
 * Gradle + Kotlin stack is just a coincidence, where syntax, wide ecosystem and CI accidentally met
 * Still more coincidence -- they met Asciidoctor

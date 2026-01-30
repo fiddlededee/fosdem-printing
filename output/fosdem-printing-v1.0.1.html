@@ -1014,11 +1014,11 @@ pre.rouge {
            <li class="fragment">
             <p>Asciidoctor parses markup into AST (Abstract Syntax Tree)</p></li>
            <li class="fragment">
-            <p>You may transform AST with Asciidoctor AST processing</p></li>
+            <p>You may transform AST with Asciidoctor tree processor</p></li>
            <li class="fragment">
             <p>Asciidoctor runs writer template for each AST node recursively</p></li>
            <li class="fragment">
-            <p>You may write your code in pure Ruby or with special Slim templates</p></li>
+            <p>You may override writer with pure Ruby or with special Slim templates</p></li>
           </ol>
          </div>
         </div>
@@ -1028,6 +1028,8 @@ pre.rouge {
          <ul>
           <li>
            <p>First idea was to follow Asciidoctor ways, and these proved to be working ways</p></li>
+          <li>
+           <p>[REF] Asciidoctor tree processor doesn’t allow to work with inline contents</p></li>
          </ul>
         </div>
        </aside>
@@ -1076,14 +1078,15 @@ pre.rouge {
            <div>
             <div class="listingblock">
              <div class="content">
-              <pre class="rouge highlight"><code data-lang="slim"><span class="p">-</span> <span class="n">list_style</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">get_basic_style</span><span class="si">}</span><span class="s2">"</span>
+              <pre class="rouge highlight"><code data-lang="slim"><span class="p">-</span> <span class="n">list_style</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">get_basic_style</span><span class="si">}</span><span class="s2"> ordered-list"</span>
 <span class="p">-</span> <span class="k">if</span> <span class="n">captioned_title?</span>
   <span class="nt">text</span>:p<span class="w"> </span>text:<span class="na">style-name</span><span class="p">=</span><span class="s">"#{list_style}"</span>
     <span class="nt">text</span>:bookmark<span class="w"> </span>text:<span class="na">name</span><span class="p">=</span><span class="s">"#{id}"</span>
     <span class="p">=</span><span class="n">captioned_title</span>
 
 <span class="nt">text</span>:list<span class="w"> </span>text:<span class="na">style-name</span><span class="p">=</span><span class="s">"#{list_style}"</span>
-  <span class="p">-</span> <span class="n">items</span><span class="p">.</span><span class="nf">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="p">,</span> <span class="n">index</span><span class="o">|</span></code></pre>
+  <span class="p">-</span> <span class="n">items</span><span class="p">.</span><span class="nf">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="p">,</span> <span class="n">index</span><span class="o">|</span>
+  <span class="nc">...</span></code></pre>
              </div>
             </div>
            </div></td>
@@ -1096,7 +1099,7 @@ pre.rouge {
           <li>
            <p>dash means code in Ruby</p></li>
           <li>
-           <p><code>get_basic_style</code> is some external function, defined as a helper, so Ruby can be used within template</p></li>
+           <p><code>get_basic_style</code> is some external Ruby helper function</p></li>
          </ul>
         </div>
        </aside>
@@ -1115,10 +1118,10 @@ pre.rouge {
          <li class="fragment">
           <p>You can’t override part of a template</p></li>
          <li class="fragment">
-          <p>You should invent styling approach</p></li>
+          <p>You should invent something for styling</p></li>
         </ul>
        </div>
-       <div class="openblock indent-before fragment">
+       <div class="openblock light-indent-before fragment">
         <div class="title">
          Styling? But text processors do support styling!
         </div>
@@ -1150,9 +1153,9 @@ pre.rouge {
             <div class="ulist">
              <ul>
               <li>
-               <p>Asciidoctor Open Document introduces some extended Open Document format to preserve Asciidoctor AST contents</p></li>
+               <p>Asciidoctor Open Document uses slightly extended intermediary OD format (to preserve AST attributes)</p></li>
               <li>
-               <p>Each function checks, if style should be applied, and if yes, applies it in a more or less OpenDocument way: doesn’t understand styling attributes but forces the style structure</p></li>
+               <p>It uses special functions that check, if style should be applied. It doesn’t know styling attributes but forces the Open Document style structure</p></li>
              </ul>
             </div></td>
           </tr>
@@ -1193,11 +1196,11 @@ pre.rouge {
         <div class="ulist">
          <ul>
           <li>
-           <p>But obviously while we should transform AST directly, not it’s XML representation. Pandoc clearly showed that transforming AST is very convenient. It turned out to be much more useful than expected, especially if we are dealing with print output without CSS</p></li>
+           <p>But obviously we should transform AST directly, not it’s XML representation. Pandoc clearly showed that transforming AST is very convenient. It turned out to be much more useful than expected, especially if we are dealing with print output without CSS</p></li>
           <li>
            <p>It is important not to output raw templates, but override only styling part</p></li>
           <li>
-           <p>Although Asciidoctor Open Document is glued with Docker, my experiments showed, that gluing with Gradle is much more controllable. Yes, finally it would be docker, but at the very end</p></li>
+           <p>Although Asciidoctor Open Document is glued with Docker, experiments showed, that gluing with Gradle is much more controllable. Yes, finally it would be docker, but at the very end</p></li>
          </ul>
         </div>
         <div class="admonitionblock tip">
@@ -1320,14 +1323,19 @@ pre.rouge {
        <div class="ulist">
         <ul>
          <li class="fragment">
+          <p>All conversion settings are written in Kotlin</p></li>
+         <li class="fragment">
           <p>Everything is in a single Gradle script (<code>build.gradle.kts</code>)</p></li>
          <li class="fragment">
-          <p>All Kotlin code examples are just includes from this script</p></li>
+          <p>The following code listings are excerpts from this script</p></li>
         </ul>
        </div>
        <aside class="notes">
-        <div class="paragraph">
-         <p>Instead of Gradle script it can be just an ordinary Java/Kotlin project, with a CLI or even service utility as an output</p>
+        <div class="ulist">
+         <ul>
+          <li>
+           <p>Instead of Gradle script it can be just an ordinary Java/Kotlin project, with a CLI or a web service utility as an output</p></li>
+         </ul>
         </div>
        </aside>
       </div>
@@ -1382,7 +1390,7 @@ pre.rouge {
     <span class="n">section</span><span class="p">.</span><span class="n">sourceTagName</span> <span class="p">==</span> <span class="s">"section"</span> <span class="p">&amp;&amp;</span>
             <span class="n">section</span><span class="p">.</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span> <span class="k">is</span> <span class="nc">Heading</span> <span class="p">&amp;&amp;</span> <span class="n">it</span><span class="p">.</span><span class="n">level</span> <span class="p">==</span> <span class="mi">1</span> <span class="p">}</span>
                 <span class="p">.</span><span class="nf">isNotEmpty</span><span class="p">()</span>
-<span class="p">}.</span><span class="nf">first</span><span class="p">().</span><span class="nf">also</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="nf">insertBefore</span><span class="p">(</span><span class="nf">makeTitle</span><span class="p">(</span><span class="n">it</span><span class="p">))</span> <span class="p">}.</span><span class="nf">remove</span><span class="p">()</span> <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+<span class="p">}.</span><span class="nf">first</span><span class="p">().</span><span class="nf">also</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="nf">insertBefore</span><span class="p">(</span><span class="nf">makeTitle</span><span class="p">(</span><span class="n">it</span><span class="p">))</span> <span class="p">}.</span><span class="nf">remove</span><span class="p">()</span></code></pre>
         </div>
        </div>
        <aside class="notes">
@@ -1390,7 +1398,7 @@ pre.rouge {
          <p>Typical AST transforming code. Typed, navigable, and testable</p>
         </div>
         <div class="paragraph">
-         <p>Here we find section with H1 heading (title slide), and insert before it the transformed version, then remove old version</p>
+         <p>Here we find section with level 1 heading (title slide), then insert before it the transformed version, and finally remove the old version</p>
         </div>
        </aside>
       </div>
@@ -1500,7 +1508,7 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
       </div>
      </section>
      <section id="a309">
-      <h2>Let’s return to the result</h2>
+      <h2>Back return to the result</h2>
       <div class="slide-content">
        <div class="imageblock">
         <img src="images/slide-1-to-print.png" alt="slide 1 to print" width="58%">
@@ -1518,7 +1526,7 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
       </div>
      </section>
      <section id="a201">
-      <h2>And a little bit of styling</h2>
+      <h2>Styling</h2>
       <div class="slide-content">
        <div class="listingblock">
         <div class="content">
@@ -1550,12 +1558,12 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
       </div>
      </section>
      <section id="a112">
-      <h2>Now let’s return to processing AST</h2>
+      <h2>Some more AST processing</h2>
       <div class="slide-content">
        <div class="listingblock">
         <div class="content">
-         <pre class="rouge highlight"><code data-lang="kotlin"><span class="nf">ast</span><span class="p">().</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">roles</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"notes"</span><span class="p">)</span> <span class="p">}</span> <i class="conum" data-value="1"></i><b>(1)</b>
-    <span class="p">.</span><span class="nf">forEach</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="nf">insertBefore</span><span class="p">(</span><span class="nc">HorizontalLine</span><span class="p">())</span> <span class="p">}</span>
+         <pre class="rouge highlight"><code data-lang="kotlin"><span class="nf">ast</span><span class="p">().</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">roles</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"notes"</span><span class="p">)</span> <span class="p">}</span>
+    <span class="p">.</span><span class="nf">forEach</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="nf">insertBefore</span><span class="p">(</span><span class="nc">HorizontalLine</span><span class="p">())</span> <span class="p">}</span> <i class="conum" data-value="1"></i><b>(1)</b>
 <span class="nf">ast</span><span class="p">().</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span> <span class="k">is</span> <span class="nc">Heading</span> <span class="p">&amp;&amp;</span> <span class="n">it</span><span class="p">.</span><span class="n">level</span> <span class="p">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
     <span class="p">.</span><span class="nf">forEach</span> <span class="p">{</span>
         <span class="n">it</span><span class="p">.</span><span class="nf">insertBefore</span><span class="p">(</span>
@@ -1584,9 +1592,6 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
            </tr>
           </tbody>
          </table>
-        </div>
-        <div class="paragraph">
-         <p>Rouge styles are generated automatically from rouge.css. The code is in <code>build.gradle.kts</code> — just about 20 lines. Using CSS for each rendering technology is really useful in many cases</p>
         </div>
        </aside>
       </div>
@@ -1680,12 +1685,15 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
         <li class="fragment">
          <p>Clean and testable code</p></li>
         <li class="fragment">
-         <p>One AST and one styling approach, but different styling typed API for each backend</p></li>
+         <p>One AST and one styling approach, but different styling API for each backend</p></li>
        </ul>
       </div>
       <aside class="notes">
        <div class="paragraph">
         <p>Once again about focus and trade-offs, but after the demo</p>
+       </div>
+       <div class="paragraph">
+        <p>[REF] Styling implementation for other formats can be looked at in the UniDoc Publisher documentation sources</p>
        </div>
        <div class="ulist">
         <ul>

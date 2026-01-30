@@ -1187,7 +1187,7 @@ children:
               sourceTagName: "p"
               children:
               - !<Text>
-                text: "You may transform AST with Asciidoctor AST processing"
+                text: "You may transform AST with Asciidoctor tree processor"
           - !<ListItem>
             sourceTagName: "li"
             roles:
@@ -1207,7 +1207,8 @@ children:
               sourceTagName: "p"
               children:
               - !<Text>
-                text: "You may write your code in pure Ruby or with special Slim templates"
+                text: "You may override writer with pure Ruby or with special Slim\
+                  \ templates"
     - !<Build_gradle$HorizontalLine> {}
     - !<OpenBlock>
       sourceTagName: "aside"
@@ -1231,6 +1232,15 @@ children:
               - !<Text>
                 text: "First idea was to follow Asciidoctor ways, and these proved\
                   \ to be working ways"
+          - !<ListItem>
+            sourceTagName: "li"
+            children:
+            - !<Paragraph>
+              sourceTagName: "p"
+              children:
+              - !<Text>
+                text: "[REF] Asciidoctor tree processor doesn’t allow to work with\
+                  \ inline contents"
   - !<OpenBlock>
     id: "a301"
     sourceTagName: "section"
@@ -1765,7 +1775,7 @@ children:
                       - "s2"
                       children:
                       - !<Text>
-                        text: "\""
+                        text: " ordered-list\""
                     - !<Text>
                       text: "\n"
                     - !<Span>
@@ -2042,6 +2052,16 @@ children:
                       children:
                       - !<Text>
                         text: "|"
+                    - !<Text>
+                      text: "\n  "
+                    - !<Span>
+                      sourceTagName: "span"
+                      roles:
+                      - "span"
+                      - "nc"
+                      children:
+                      - !<Text>
+                        text: "..."
     - !<Build_gradle$HorizontalLine> {}
     - !<OpenBlock>
       sourceTagName: "aside"
@@ -2077,8 +2097,7 @@ children:
                 - !<Text>
                   text: "get_basic_style"
               - !<Text>
-                text: " is some external function, defined as a helper, so Ruby can\
-                  \ be used within template"
+                text: " is some external Ruby helper function"
   - !<OpenBlock>
     id: "a10"
     sourceTagName: "section"
@@ -2119,7 +2138,7 @@ children:
             sourceTagName: "p"
             children:
             - !<Text>
-              text: "You should invent styling approach"
+              text: "You should invent something for styling"
     - !<OpenBlock>
       sourceTagName: "div"
       roles:
@@ -2252,8 +2271,8 @@ children:
                       sourceTagName: "p"
                       children:
                       - !<Text>
-                        text: "Asciidoctor Open Document introduces some extended\
-                          \ Open Document format to preserve Asciidoctor AST contents"
+                        text: "Asciidoctor Open Document uses slightly extended intermediary\
+                          \ OD format (to preserve AST attributes)"
                   - !<ListItem>
                     sourceTagName: "li"
                     children:
@@ -2261,10 +2280,9 @@ children:
                       sourceTagName: "p"
                       children:
                       - !<Text>
-                        text: "Each function checks, if style should be applied, and\
-                          \ if yes, applies it in a more or less OpenDocument way:\
-                          \ doesn’t understand styling attributes but forces the style\
-                          \ structure"
+                        text: "It uses special functions that check, if style should\
+                          \ be applied. It doesn’t know styling attributes but forces\
+                          \ the Open Document style structure"
     - !<Build_gradle$HorizontalLine> {}
     - !<OpenBlock>
       sourceTagName: "aside"
@@ -2369,11 +2387,10 @@ children:
               sourceTagName: "p"
               children:
               - !<Text>
-                text: "But obviously while we should transform AST directly, not it’\
-                  s XML representation. Pandoc clearly showed that transforming AST\
-                  \ is very convenient. It turned out to be much more useful than\
-                  \ expected, especially if we are dealing with print output without\
-                  \ CSS"
+                text: "But obviously we should transform AST directly, not it’s XML\
+                  \ representation. Pandoc clearly showed that transforming AST is\
+                  \ very convenient. It turned out to be much more useful than expected,\
+                  \ especially if we are dealing with print output without CSS"
           - !<ListItem>
             sourceTagName: "li"
             children:
@@ -2390,9 +2407,9 @@ children:
               sourceTagName: "p"
               children:
               - !<Text>
-                text: "Although Asciidoctor Open Document is glued with Docker, my\
-                  \ experiments showed, that gluing with Gradle is much more controllable.\
-                  \ Yes, finally it would be docker, but at the very end"
+                text: "Although Asciidoctor Open Document is glued with Docker, experiments\
+                  \ showed, that gluing with Gradle is much more controllable. Yes,\
+                  \ finally it would be docker, but at the very end"
       - !<OpenBlock>
         sourceTagName: "div"
         roles:
@@ -2718,6 +2735,16 @@ children:
             sourceTagName: "p"
             children:
             - !<Text>
+              text: "All conversion settings are written in Kotlin"
+        - !<ListItem>
+          sourceTagName: "li"
+          roles:
+          - "fragment"
+          children:
+          - !<Paragraph>
+            sourceTagName: "p"
+            children:
+            - !<Text>
               text: "Everything is in a single Gradle script ("
             - !<Span>
               roles:
@@ -2736,7 +2763,7 @@ children:
             sourceTagName: "p"
             children:
             - !<Text>
-              text: "All Kotlin code examples are just includes from this script"
+              text: "The following code listings are excerpts from this script"
     - !<Build_gradle$HorizontalLine> {}
     - !<OpenBlock>
       sourceTagName: "aside"
@@ -2746,14 +2773,20 @@ children:
       - !<OpenBlock>
         sourceTagName: "div"
         roles:
-        - "paragraph"
+        - "ulist"
         children:
-        - !<Paragraph>
-          sourceTagName: "p"
+        - !<UnorderedList>
+          sourceTagName: "ul"
           children:
-          - !<Text>
-            text: "Instead of Gradle script it can be just an ordinary Java/Kotlin\
-              \ project, with a CLI or even service utility as an output"
+          - !<ListItem>
+            sourceTagName: "li"
+            children:
+            - !<Paragraph>
+              sourceTagName: "p"
+              children:
+              - !<Text>
+                text: "Instead of Gradle script it can be just an ordinary Java/Kotlin\
+                  \ project, with a CLI or a web service utility as an output"
   - !<OpenBlock>
     id: "a106"
     sourceTagName: "section"
@@ -3594,20 +3627,6 @@ children:
               children:
               - !<Text>
                 text: "()"
-            - !<Text>
-              text: " "
-            - !<Span>
-              sourceTagName: "i"
-              roles:
-              - "i"
-              - "conum"
-            - !<Span>
-              sourceTagName: "b"
-              roles:
-              - "b"
-              children:
-              - !<Text>
-                text: "(1)"
     - !<Build_gradle$HorizontalLine> {}
     - !<OpenBlock>
       sourceTagName: "aside"
@@ -3633,8 +3652,8 @@ children:
           sourceTagName: "p"
           children:
           - !<Text>
-            text: "Here we find section with H1 heading (title slide), and insert\
-              \ before it the transformed version, then remove old version"
+            text: "Here we find section with level 1 heading (title slide), then insert\
+              \ before it the transformed version, and finally remove the old version"
   - !<OpenBlock>
     id: "a108"
     sourceTagName: "section"
@@ -5690,7 +5709,7 @@ children:
       level: 1
       children:
       - !<Text>
-        text: "9.7. Let’s return to the result"
+        text: "9.7. Back return to the result"
     - !<OpenBlock>
       sourceTagName: "div"
       roles:
@@ -5746,7 +5765,7 @@ children:
       level: 1
       children:
       - !<Text>
-        text: "9.8. And a little bit of styling"
+        text: "9.8. Styling"
     - !<OpenBlock>
       sourceTagName: "div"
       roles:
@@ -6650,7 +6669,7 @@ children:
       level: 1
       children:
       - !<Text>
-        text: "9.9. Now let’s return to processing AST"
+        text: "9.9. Some more AST processing"
     - !<OpenBlock>
       sourceTagName: "div"
       roles:
@@ -6781,20 +6800,6 @@ children:
               - !<Text>
                 text: "}"
             - !<Text>
-              text: " "
-            - !<Span>
-              sourceTagName: "i"
-              roles:
-              - "i"
-              - "conum"
-            - !<Span>
-              sourceTagName: "b"
-              roles:
-              - "b"
-              children:
-              - !<Text>
-                text: "(1)"
-            - !<Text>
               text: "\n    "
             - !<Span>
               sourceTagName: "span"
@@ -6882,6 +6887,20 @@ children:
               children:
               - !<Text>
                 text: "}"
+            - !<Text>
+              text: " "
+            - !<Span>
+              sourceTagName: "i"
+              roles:
+              - "i"
+              - "conum"
+            - !<Span>
+              sourceTagName: "b"
+              roles:
+              - "b"
+              children:
+              - !<Text>
+                text: "(1)"
             - !<Text>
               text: "\n"
             - !<Span>
@@ -7422,26 +7441,6 @@ children:
                   children:
                   - !<Text>
                     text: "Applying custom style and rouge code highlighting styles"
-      - !<OpenBlock>
-        sourceTagName: "div"
-        roles:
-        - "paragraph"
-        children:
-        - !<Paragraph>
-          sourceTagName: "p"
-          children:
-          - !<Text>
-            text: "Rouge styles are generated automatically from rouge.css. The code\
-              \ is in "
-          - !<Span>
-            roles:
-            - "code"
-            children:
-            - !<Text>
-              text: "build.gradle.kts"
-          - !<Text>
-            text: " — just about 20 lines. Using CSS for each rendering technology\
-              \ is really useful in many cases"
   - !<OpenBlock>
     id: "a113"
     sourceTagName: "section"
@@ -8125,8 +8124,8 @@ children:
           sourceTagName: "p"
           children:
           - !<Text>
-            text: "One AST and one styling approach, but different styling typed API\
-              \ for each backend"
+            text: "One AST and one styling approach, but different styling API for\
+              \ each backend"
   - !<Build_gradle$HorizontalLine> {}
   - !<OpenBlock>
     sourceTagName: "aside"
@@ -8143,6 +8142,17 @@ children:
         children:
         - !<Text>
           text: "Once again about focus and trade-offs, but after the demo"
+    - !<OpenBlock>
+      sourceTagName: "div"
+      roles:
+      - "paragraph"
+      children:
+      - !<Paragraph>
+        sourceTagName: "p"
+        children:
+        - !<Text>
+          text: "[REF] Styling implementation for other formats can be looked at in\
+            \ the UniDoc Publisher documentation sources"
     - !<OpenBlock>
       sourceTagName: "div"
       roles:

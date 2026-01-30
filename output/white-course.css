@@ -628,6 +628,10 @@ li::marker {
     margin-top: 40px !important;
 }
 
+.light-indent-before {
+    margin-top: 20px !important;
+}
+
 .no-indent-before {
     margin-top: 10px !important;
 }
@@ -666,7 +670,7 @@ li::marker {
     padding: 10px 0px 10px 0px;
 }
 
-p code {
+p code, h1 code, h2 code, h3 code {
     color: #ac1d94;
 }
 

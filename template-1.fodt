@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.4" office:mimetype="application/vnd.oasis.opendocument.text">
- <office:meta><meta:creation-date>2023-09-15T13:22:13.303935834</meta:creation-date><dc:date>2026-01-28T14:49:42.129742542</dc:date><meta:editing-duration>PT11H4M50S</meta:editing-duration><meta:editing-cycles>108</meta:editing-cycles><meta:generator>LibreOffice/25.2.7.2$Linux_X86_64 LibreOffice_project/520$Build-2</meta:generator><meta:document-statistic meta:table-count="1" meta:image-count="0" meta:object-count="0" meta:page-count="2" meta:paragraph-count="39" meta:word-count="162" meta:character-count="1012" meta:non-whitespace-character-count="888"/></office:meta>
+ <office:meta><meta:creation-date>2023-09-15T13:22:13.303935834</meta:creation-date><dc:date>2026-01-30T03:51:54.170319387</dc:date><meta:editing-duration>PT11H32M28S</meta:editing-duration><meta:editing-cycles>112</meta:editing-cycles><meta:generator>LibreOffice/25.2.7.2$Linux_X86_64 LibreOffice_project/520$Build-2</meta:generator><meta:document-statistic meta:table-count="1" meta:image-count="1" meta:object-count="0" meta:page-count="2" meta:paragraph-count="40" meta:word-count="162" meta:character-count="1013" meta:non-whitespace-character-count="888"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
-   <config:config-item config:name="ViewAreaTop" config:type="long">26451</config:config-item>
+   <config:config-item config:name="ViewAreaTop" config:type="long">29104</config:config-item>
    <config:config-item config:name="ViewAreaLeft" config:type="long">0</config:config-item>
-   <config:config-item config:name="ViewAreaWidth" config:type="long">21198</config:config-item>
-   <config:config-item config:name="ViewAreaHeight" config:type="long">11834</config:config-item>
+   <config:config-item config:name="ViewAreaWidth" config:type="long">23848</config:config-item>
+   <config:config-item config:name="ViewAreaHeight" config:type="long">13511</config:config-item>
    <config:config-item config:name="ShowRedlineChanges" config:type="boolean">true</config:config-item>
    <config:config-item config:name="InBrowseMode" config:type="boolean">false</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view2</config:config-item>
-     <config:config-item config:name="ViewLeft" config:type="long">2501</config:config-item>
-     <config:config-item config:name="ViewTop" config:type="long">32703</config:config-item>
+     <config:config-item config:name="ViewLeft" config:type="long">3424</config:config-item>
+     <config:config-item config:name="ViewTop" config:type="long">33216</config:config-item>
      <config:config-item config:name="VisibleLeft" config:type="long">0</config:config-item>
-     <config:config-item config:name="VisibleTop" config:type="long">26451</config:config-item>
-     <config:config-item config:name="VisibleRight" config:type="long">21197</config:config-item>
-     <config:config-item config:name="VisibleBottom" config:type="long">38283</config:config-item>
+     <config:config-item config:name="VisibleTop" config:type="long">29104</config:config-item>
+     <config:config-item config:name="VisibleRight" config:type="long">23846</config:config-item>
+     <config:config-item config:name="VisibleBottom" config:type="long">42614</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ViewLayoutColumns" config:type="short">1</config:config-item>
      <config:config-item config:name="ViewLayoutBookMode" config:type="boolean">false</config:config-item>
-     <config:config-item config:name="ZoomFactor" config:type="short">180</config:config-item>
+     <config:config-item config:name="ZoomFactor" config:type="short">160</config:config-item>
      <config:config-item config:name="IsSelectedFrame" config:type="boolean">false</config:config-item>
      <config:config-item config:name="KeepRatio" config:type="boolean">true</config:config-item>
      <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -96,7 +96,7 @@
    <config:config-item config:name="AddParaTableSpacing" config:type="boolean">true</config:config-item>
    <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
    <config:config-item config:name="CurrentDatabaseCommandType" config:type="int">0</config:config-item>
-   <config:config-item config:name="ChartAutoUpdate" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ChartAutoUpdate" config:type="boolean">false</config:config-item>
    <config:config-item config:name="OutlineLevelYieldsNumbering" config:type="boolean">false</config:config-item>
    <config:config-item config:name="UseOldNumbering" config:type="boolean">false</config:config-item>
    <config:config-item config:name="AddParaSpacingToTableCells" config:type="boolean">true</config:config-item>
@@ -124,7 +124,7 @@
    <config:config-item config:name="InvertBorderSpacing" config:type="boolean">false</config:config-item>
    <config:config-item config:name="ProtectFields" config:type="boolean">false</config:config-item>
    <config:config-item config:name="AddExternalLeading" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="LinkUpdateMode" config:type="short">1</config:config-item>
+   <config:config-item config:name="LinkUpdateMode" config:type="short">0</config:config-item>
    <config:config-item config:name="UseFormerObjectPositioning" config:type="boolean">false</config:config-item>
    <config:config-item config:name="UnxForceZeroExtLeading" config:type="boolean">false</config:config-item>
    <config:config-item config:name="UseFormerTextWrapping" config:type="boolean">false</config:config-item>
@@ -144,7 +144,7 @@
    <config:config-item config:name="UseOldPrinterMetrics" config:type="boolean">false</config:config-item>
    <config:config-item config:name="RedlineProtectionKey" config:type="base64Binary"/>
    <config:config-item config:name="TabsRelativeToIndent" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="Rsid" config:type="int">5074555</config:config-item>
+   <config:config-item config:name="Rsid" config:type="int">5328083</config:config-item>
    <config:config-item config:name="UpdateFromTemplate" config:type="boolean">true</config:config-item>
    <config:config-item config:name="ProtectForm" config:type="boolean">false</config:config-item>
    <config:config-item config:name="MsWordCompMinLineHeightByFly" config:type="boolean">false</config:config-item>
@@ -180,7 +180,7 @@
   <draw:hatch draw:name="hatch" draw:style="single" draw:color="#3465a4" draw:distance="0.2mm" draw:rotation="0"/>
   <style:default-style style:family="graphic">
    <style:graphic-properties svg:stroke-color="#3465a4" draw:fill-color="#729fcf" fo:wrap-option="no-wrap" draw:shadow-offset-x="3mm" draw:shadow-offset-y="3mm" draw:start-line-spacing-horizontal="2.83mm" draw:start-line-spacing-vertical="2.83mm" draw:end-line-spacing-horizontal="2.83mm" draw:end-line-spacing-vertical="2.83mm" style:writing-mode="lr-tb" style:flow-with-text="false"/>
-   <style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" loext:tab-stop-distance="0mm" style:writing-mode="lr-tb" style:font-independent-line-spacing="false">
+   <style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" loext:tab-stop-distance="0mm" style:font-independent-line-spacing="false">
     <style:tab-stops/>
    </style:paragraph-properties>
    <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="en" fo:country="US" style:letter-kerning="true" style:font-name-asian="Noto Serif CJK SC" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="Lohit Devanagari1" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN"/>
@@ -349,6 +349,14 @@
   </style:style>
   <style:style style:name="First_20_line_20_indent" style:display-name="First line indent" style:family="paragraph" style:parent-style-name="Text_20_body" style:class="text">
    <style:paragraph-properties fo:margin-left="0mm" fo:text-indent="10mm" style:auto-text-indent="false"/>
+  </style:style>
+  <style:style style:name="Header" style:family="paragraph" style:parent-style-name="Header_20_and_20_Footer" style:class="extra">
+   <style:paragraph-properties text:number-lines="false" text:line-number="0">
+    <style:tab-stops>
+     <style:tab-stop style:position="85mm" style:type="center"/>
+     <style:tab-stop style:position="170mm" style:type="right"/>
+    </style:tab-stops>
+   </style:paragraph-properties>
   </style:style>
   <style:style style:name="Internet_20_link" style:display-name="Internet link" style:family="text">
    <style:text-properties fo:color="#0550ae" loext:opacity="100%" fo:language="zxx" fo:country="none" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" style:language-asian="zxx" style:country-asian="none" style:language-complex="zxx" style:country-complex="none"/>
@@ -565,92 +573,111 @@
   <style:style style:name="Table1.A1" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.97mm" fo:border="0.5pt solid #000000"/>
   </style:style>
-  <style:style style:name="P1" style:family="paragraph" style:parent-style-name="Footer">
+  <style:style style:name="P1" style:family="paragraph" style:parent-style-name="Header">
+   <style:paragraph-properties fo:margin-top="0mm" fo:margin-bottom="0mm" style:contextual-spacing="false">
+    <style:tab-stops>
+     <style:tab-stop style:position="170mm" style:type="right"/>
+    </style:tab-stops>
+   </style:paragraph-properties>
+   <style:text-properties style:font-name="Liberation Serif" fo:font-size="10pt" officeooo:rsid="00514cd3" officeooo:paragraph-rsid="004f40e5" style:font-size-asian="10pt" style:font-size-complex="10pt"/>
+  </style:style>
+  <style:style style:name="P2" style:family="paragraph" style:parent-style-name="Footer">
    <style:paragraph-properties fo:text-align="center" style:justify-single-word="false"/>
    <style:text-properties style:font-name="Liberation Serif" fo:font-size="12pt" style:font-size-asian="12pt" style:font-size-complex="12pt"/>
   </style:style>
-  <style:style style:name="P2" style:family="paragraph" style:parent-style-name="Text_20_body" style:master-page-name="First_20_Page">
+  <style:style style:name="P3" style:family="paragraph" style:parent-style-name="Text_20_body" style:master-page-name="First_20_Page">
    <style:paragraph-properties style:page-number="auto"/>
    <style:text-properties officeooo:paragraph-rsid="002d8e03"/>
   </style:style>
-  <style:style style:name="P3" style:family="paragraph" style:parent-style-name="Text_20_body">
+  <style:style style:name="P4" style:family="paragraph" style:parent-style-name="Text_20_body">
    <style:text-properties officeooo:paragraph-rsid="002d8e03"/>
   </style:style>
-  <style:style style:name="P4" style:family="paragraph" style:parent-style-name="Contents_20_Heading">
+  <style:style style:name="P5" style:family="paragraph" style:parent-style-name="Contents_20_Heading">
    <style:text-properties officeooo:rsid="0042d513" officeooo:paragraph-rsid="0042d513"/>
   </style:style>
-  <style:style style:name="P5" style:family="paragraph" style:parent-style-name="Text_20_body">
+  <style:style style:name="P6" style:family="paragraph" style:parent-style-name="Text_20_body">
    <style:text-properties officeooo:rsid="00160b83" officeooo:paragraph-rsid="00160b83"/>
   </style:style>
-  <style:style style:name="P6" style:family="paragraph" style:parent-style-name="First_20_line_20_indent">
+  <style:style style:name="P7" style:family="paragraph" style:parent-style-name="First_20_line_20_indent">
    <style:text-properties officeooo:paragraph-rsid="004ad257"/>
   </style:style>
-  <style:style style:name="P7" style:family="paragraph" style:parent-style-name="Heading_20_2">
+  <style:style style:name="P8" style:family="paragraph" style:parent-style-name="Heading_20_2">
    <style:text-properties officeooo:paragraph-rsid="004ad257"/>
-  </style:style>
-  <style:style style:name="P8" style:family="paragraph" style:parent-style-name="Text_20_body">
-   <style:text-properties officeooo:rsid="00304402" officeooo:paragraph-rsid="00304402"/>
   </style:style>
   <style:style style:name="P9" style:family="paragraph" style:parent-style-name="Text_20_body">
-   <style:text-properties officeooo:rsid="003d0fd5" officeooo:paragraph-rsid="003d0fd5"/>
+   <style:text-properties officeooo:rsid="00304402" officeooo:paragraph-rsid="00304402"/>
   </style:style>
   <style:style style:name="P10" style:family="paragraph" style:parent-style-name="Text_20_body">
-   <style:text-properties officeooo:rsid="003d7264" officeooo:paragraph-rsid="003d7264"/>
+   <style:text-properties officeooo:rsid="003d0fd5" officeooo:paragraph-rsid="003d0fd5"/>
   </style:style>
   <style:style style:name="P11" style:family="paragraph" style:parent-style-name="Text_20_body">
-   <style:text-properties officeooo:rsid="0017120e" officeooo:paragraph-rsid="0017120e"/>
+   <style:text-properties officeooo:rsid="003d7264" officeooo:paragraph-rsid="003d7264"/>
   </style:style>
-  <style:style style:name="P12" style:family="paragraph" style:parent-style-name="Text_20_body" style:list-style-name="Numbering_20_123">
+  <style:style style:name="P12" style:family="paragraph" style:parent-style-name="Text_20_body">
    <style:text-properties officeooo:rsid="0017120e" officeooo:paragraph-rsid="0017120e"/>
   </style:style>
   <style:style style:name="P13" style:family="paragraph" style:parent-style-name="Text_20_body" style:list-style-name="Numbering_20_123">
+   <style:text-properties officeooo:rsid="0017120e" officeooo:paragraph-rsid="0017120e"/>
+  </style:style>
+  <style:style style:name="P14" style:family="paragraph" style:parent-style-name="Text_20_body" style:list-style-name="Numbering_20_123">
    <style:text-properties officeooo:rsid="002f6a41" officeooo:paragraph-rsid="002f6a41"/>
   </style:style>
-  <style:style style:name="P14" style:family="paragraph" style:parent-style-name="Preformatted_20_Text">
+  <style:style style:name="P15" style:family="paragraph" style:parent-style-name="Preformatted_20_Text">
    <style:text-properties officeooo:rsid="0020e5b0" officeooo:paragraph-rsid="0020e5b0"/>
   </style:style>
-  <style:style style:name="P15" style:family="paragraph" style:parent-style-name="Text_20_body">
+  <style:style style:name="P16" style:family="paragraph" style:parent-style-name="Text_20_body">
    <style:text-properties officeooo:rsid="0020e5b0" officeooo:paragraph-rsid="0020e5b0"/>
   </style:style>
-  <style:style style:name="P16" style:family="paragraph" style:parent-style-name="Table">
+  <style:style style:name="P17" style:family="paragraph" style:parent-style-name="Horizontal_20_Line">
+   <style:text-properties officeooo:rsid="00514cd3" officeooo:paragraph-rsid="00514cd3"/>
+  </style:style>
+  <style:style style:name="P18" style:family="paragraph" style:parent-style-name="Table">
    <style:text-properties officeooo:rsid="00366dbd" officeooo:paragraph-rsid="00366dbd"/>
   </style:style>
-  <style:style style:name="P17" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+  <style:style style:name="P19" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:paragraph-properties fo:text-align="start" style:justify-single-word="false"/>
    <style:text-properties officeooo:rsid="002ee87f" officeooo:paragraph-rsid="002ee87f"/>
   </style:style>
-  <style:style style:name="P18" style:family="paragraph" style:parent-style-name="Text_20_body">
+  <style:style style:name="P20" style:family="paragraph" style:parent-style-name="Text_20_body">
    <style:text-properties officeooo:rsid="0013f7b7" officeooo:paragraph-rsid="0020e5b0"/>
   </style:style>
-  <style:style style:name="P19" style:family="paragraph" style:parent-style-name="Figure">
+  <style:style style:name="P21" style:family="paragraph" style:parent-style-name="Figure">
    <style:text-properties officeooo:paragraph-rsid="00366dbd"/>
   </style:style>
-  <style:style style:name="P20" style:family="paragraph" style:parent-style-name="Text_20_body">
+  <style:style style:name="P22" style:family="paragraph" style:parent-style-name="Text_20_body">
    <style:text-properties officeooo:rsid="003ed0d5" officeooo:paragraph-rsid="003ed0d5"/>
   </style:style>
   <style:style style:name="T1" style:family="text">
-   <style:text-properties officeooo:rsid="00308791"/>
+   <style:text-properties style:text-position="0% 100%"/>
   </style:style>
   <style:style style:name="T2" style:family="text">
-   <style:text-properties officeooo:rsid="0042d513"/>
+   <style:text-properties officeooo:rsid="00308791"/>
   </style:style>
   <style:style style:name="T3" style:family="text">
-   <style:text-properties officeooo:rsid="001e1e56"/>
+   <style:text-properties officeooo:rsid="0042d513"/>
   </style:style>
   <style:style style:name="T4" style:family="text">
-   <style:text-properties officeooo:rsid="004ad257"/>
+   <style:text-properties officeooo:rsid="001e1e56"/>
   </style:style>
   <style:style style:name="T5" style:family="text">
-   <style:text-properties officeooo:rsid="0028b0ca"/>
+   <style:text-properties officeooo:rsid="004ad257"/>
   </style:style>
   <style:style style:name="T6" style:family="text">
+   <style:text-properties officeooo:rsid="0028b0ca"/>
+  </style:style>
+  <style:style style:name="T7" style:family="text">
    <style:text-properties officeooo:rsid="003a17a6"/>
   </style:style>
+  <style:style style:name="fr1" style:family="graphic" style:parent-style-name="Graphics">
+   <style:graphic-properties style:vertical-pos="from-top" style:horizontal-pos="center" style:horizontal-rel="paragraph" style:mirror="none" fo:clip="rect(0mm, 0mm, 0mm, 0mm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard"/>
+  </style:style>
   <style:page-layout style:name="pm1">
-   <style:page-layout-properties fo:page-width="210.01mm" fo:page-height="297mm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="20mm" fo:margin-bottom="10mm" fo:margin-left="20mm" fo:margin-right="20mm" style:writing-mode="lr-tb" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="7.06mm" style:layout-grid-ruby-height="3.53mm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0mm" loext:margin-gutter="0mm">
+   <style:page-layout-properties fo:page-width="210.01mm" fo:page-height="297mm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="11.99mm" fo:margin-bottom="10mm" fo:margin-left="20mm" fo:margin-right="20mm" style:writing-mode="lr-tb" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="7.06mm" style:layout-grid-ruby-height="3.53mm" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0mm" loext:margin-gutter="0mm">
     <style:footnote-sep style:width="0.18mm" style:distance-before-sep="1.01mm" style:distance-after-sep="1.01mm" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
    </style:page-layout-properties>
-   <style:header-style/>
+   <style:header-style>
+    <style:header-footer-properties fo:min-height="0mm" fo:margin-left="0mm" fo:margin-right="0mm" fo:margin-bottom="4.99mm" fo:background-color="transparent" draw:fill="none" draw:fill-color="#729fcf"/>
+   </style:header-style>
    <style:footer-style>
     <style:header-footer-properties fo:min-height="6mm" fo:margin-left="0mm" fo:margin-right="0mm" fo:margin-top="4.99mm" fo:background-color="transparent" style:dynamic-spacing="false" draw:fill="none" draw:fill-color="#729fcf"/>
    </style:footer-style>
@@ -668,8 +695,99 @@
  </office:automatic-styles>
  <office:master-styles>
   <style:master-page style:name="Standard" style:page-layout-name="pm1" draw:style-name="dp1">
+   <style:header>
+    <text:p text:style-name="P1"><text:tab/><text:span text:style-name="T1"><draw:frame draw:style-name="fr1" draw:name="Image1" text:anchor-type="as-char" svg:y="-2.36mm" svg:width="17.66mm" svg:height="3mm" draw:z-index="0"><draw:image draw:mime-type="image/png">
+        <office:binary-data>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
+         gg==
+        </office:binary-data>
+       </draw:image>
+      </draw:frame></text:span></text:p>
+    <text:p text:style-name="P1"/>
+   </style:header>
    <style:footer>
-    <text:p text:style-name="P1"><text:page-number text:select-page="current">2</text:page-number></text:p>
+    <text:p text:style-name="P2"><text:page-number text:select-page="current">2</text:page-number></text:p>
    </style:footer>
   </style:master-page>
   <style:master-page style:name="First_20_Page" style:display-name="First Page" style:page-layout-name="pm2" draw:style-name="dp1" style:next-style-name="Standard"/>
@@ -688,42 +806,42 @@
     <text:sequence-decl text:display-outline-level="0" text:name="Drawing"/>
     <text:sequence-decl text:display-outline-level="0" text:name="Figure"/>
    </text:sequence-decls>
-   <text:p text:style-name="P2"><text:variable-set text:name="include" office:value-type="string">all</text:variable-set></text:p>
-   <text:p text:style-name="P3"><text:variable-set text:name="process" office:value-type="string">end</text:variable-set></text:p>
-   <text:p text:style-name="Title">Пример <text:span text:style-name="T1">заголовка документа</text:span></text:p>
-   <text:p text:style-name="P4">Заголовок содержания</text:p>
-   <text:p text:style-name="Contents_20_1">Содержание – 1 уровень<text:tab/><text:span text:style-name="T2">1</text:span></text:p>
-   <text:p text:style-name="Contents_20_2">Содержание – 2 уровень<text:tab/><text:span text:style-name="T2">2</text:span></text:p>
-   <text:p text:style-name="Contents_20_3">Содержание – 3 уровень<text:tab/><text:span text:style-name="T2">3</text:span></text:p>
-   <text:p text:style-name="Contents_20_4">Содержание – <text:span text:style-name="T2">4</text:span> уровень<text:tab/><text:span text:style-name="T2">4</text:span></text:p>
-   <text:p text:style-name="Contents_20_5">Содержание – <text:span text:style-name="T2">5</text:span> уровень<text:tab/><text:span text:style-name="T2">5</text:span></text:p>
-   <text:h text:style-name="Heading_20_1" text:outline-level="1">Пример заголовка <text:span text:style-name="T1">первого</text:span> уровня</text:h>
-   <text:p text:style-name="P5">Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. <text:span text:style-name="T3">Ссылка – </text:span><text:a xlink:type="simple" xlink:href="https://jugru.org/" text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link"><text:span text:style-name="T3">https://jugru.org</text:span></text:a><text:span text:style-name="T3">.</text:span></text:p>
-   <text:p text:style-name="P6">Абзац с <text:span text:style-name="T4">красной строки.</text:span></text:p>
-   <text:h text:style-name="P7" text:outline-level="2">Пример заголовка <text:span text:style-name="T1">второго</text:span> уровня</text:h>
-   <text:p text:style-name="P5">Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац <text:span text:style-name="Source_20_Text">&lt;</text:span><text:span text:style-name="Source_20_Text"><text:span text:style-name="T5">p&gt;</text:span></text:span><text:span text:style-name="T5"> </text:span>с текстом. Абзац<text:span text:style-name="Footnote_20_anchor"><text:span text:style-name="T6">1</text:span></text:span> с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом.</text:p>
-   <text:h text:style-name="Heading_20_3" text:outline-level="3">Пример заголовка <text:span text:style-name="T1">третьего</text:span> уровня</text:h>
-   <text:p text:style-name="P8">Абзац с текстом.</text:p>
-   <text:h text:style-name="Heading_20_4" text:outline-level="4">Пример заголовка <text:span text:style-name="T1">четвертого</text:span> уровня</text:h>
+   <text:p text:style-name="P3"><text:variable-set text:name="include" office:value-type="string">all</text:variable-set></text:p>
+   <text:p text:style-name="P4"><text:variable-set text:name="process" office:value-type="string">end</text:variable-set></text:p>
+   <text:p text:style-name="Title">Пример <text:span text:style-name="T2">заголовка документа</text:span></text:p>
+   <text:p text:style-name="P5">Заголовок содержания</text:p>
+   <text:p text:style-name="Contents_20_1">Содержание – 1 уровень<text:tab/><text:span text:style-name="T3">1</text:span></text:p>
+   <text:p text:style-name="Contents_20_2">Содержание – 2 уровень<text:tab/><text:span text:style-name="T3">2</text:span></text:p>
+   <text:p text:style-name="Contents_20_3">Содержание – 3 уровень<text:tab/><text:span text:style-name="T3">3</text:span></text:p>
+   <text:p text:style-name="Contents_20_4">Содержание – <text:span text:style-name="T3">4</text:span> уровень<text:tab/><text:span text:style-name="T3">4</text:span></text:p>
+   <text:p text:style-name="Contents_20_5">Содержание – <text:span text:style-name="T3">5</text:span> уровень<text:tab/><text:span text:style-name="T3">5</text:span></text:p>
+   <text:h text:style-name="Heading_20_1" text:outline-level="1"><text:bookmark-start text:name="__RefHeading___Toc140_1134068581"/>Пример заголовка <text:span text:style-name="T2">первого</text:span> уровня<text:bookmark-end text:name="__RefHeading___Toc140_1134068581"/></text:h>
+   <text:p text:style-name="P6">Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. <text:span text:style-name="T4">Ссылка – </text:span><text:a xlink:type="simple" xlink:href="https://jugru.org/" text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link"><text:span text:style-name="T4">https://jugru.org</text:span></text:a><text:span text:style-name="T4">.</text:span></text:p>
+   <text:p text:style-name="P7">Абзац с <text:span text:style-name="T5">красной строки.</text:span></text:p>
+   <text:h text:style-name="P8" text:outline-level="2">Пример заголовка <text:span text:style-name="T2">второго</text:span> уровня</text:h>
+   <text:p text:style-name="P6">Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац <text:span text:style-name="Source_20_Text">&lt;</text:span><text:span text:style-name="Source_20_Text"><text:span text:style-name="T6">p&gt;</text:span></text:span><text:span text:style-name="T6"> </text:span>с текстом. Абзац<text:span text:style-name="Footnote_20_anchor"><text:span text:style-name="T7">1</text:span></text:span> с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом. Абзац с текстом.</text:p>
+   <text:h text:style-name="Heading_20_3" text:outline-level="3">Пример заголовка <text:span text:style-name="T2">третьего</text:span> уровня</text:h>
+   <text:p text:style-name="P9">Абзац с текстом.</text:p>
+   <text:h text:style-name="Heading_20_4" text:outline-level="4">Пример заголовка <text:span text:style-name="T2">четвертого</text:span> уровня</text:h>
    <text:p text:style-name="Definition_20_Term">Термин 1</text:p>
-   <text:p text:style-name="P9">Определение 1</text:p>
-   <text:p text:style-name="P10">Дополнение определения 1</text:p>
+   <text:p text:style-name="P10">Определение 1</text:p>
+   <text:p text:style-name="P11">Дополнение определения 1</text:p>
    <text:p text:style-name="Definition_20_Term">Термин 2</text:p>
-   <text:p text:style-name="P9">Определение 2</text:p>
-   <text:h text:style-name="Heading_20_5" text:outline-level="5">Пример заголовка <text:span text:style-name="T1">пятого</text:span> уровня</text:h>
-   <text:p text:style-name="P11">Список:</text:p>
+   <text:p text:style-name="P10">Определение 2</text:p>
+   <text:h text:style-name="Heading_20_5" text:outline-level="5">Пример заголовка <text:span text:style-name="T2">пятого</text:span> уровня</text:h>
+   <text:p text:style-name="P12">Список:</text:p>
    <text:list text:style-name="Numbering_20_123">
     <text:list-item>
-     <text:p text:style-name="P12">Первый пункт</text:p>
+     <text:p text:style-name="P13">Первый пункт</text:p>
      <text:list>
       <text:list-item>
-       <text:p text:style-name="P13">Подпункт</text:p>
+       <text:p text:style-name="P14">Подпункт</text:p>
        <text:list>
         <text:list-item>
-         <text:p text:style-name="P13">Подпункт</text:p>
+         <text:p text:style-name="P14">Подпункт</text:p>
          <text:list>
           <text:list-item>
-           <text:p text:style-name="P13">Подпункт</text:p>
+           <text:p text:style-name="P14">Подпункт</text:p>
           </text:list-item>
          </text:list>
         </text:list-item>
@@ -732,28 +850,28 @@
      </text:list>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P12">Второй пункт</text:p>
+     <text:p text:style-name="P13">Второй пункт</text:p>
     </text:list-item>
    </text:list>
    <text:p text:style-name="Text">Заголовок листинга</text:p>
-   <text:p text:style-name="P14">Some listing<text:line-break/>Another line</text:p>
-   <text:p text:style-name="P15">Абзац с текстом</text:p>
-   <text:p text:style-name="Horizontal_20_Line"><text:soft-page-break/></text:p>
-   <text:p text:style-name="P16">Название таблицы</text:p>
+   <text:p text:style-name="P15">Some listing<text:line-break/>Another line</text:p>
+   <text:p text:style-name="P16">Абзац с текстом</text:p>
+   <text:p text:style-name="P17"><text:soft-page-break/></text:p>
+   <text:p text:style-name="P18">Название таблицы</text:p>
    <table:table table:name="Table1" table:style-name="Table1">
     <table:table-column table:style-name="Table1.A"/>
     <table:table-row>
      <table:table-cell table:style-name="Table1.A1" office:value-type="string">
-      <text:p text:style-name="P17">Текст в таблице</text:p>
+      <text:p text:style-name="P19">Текст в таблице</text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:p text:style-name="P18"/>
+   <text:p text:style-name="P20"/>
    <text:p text:style-name="Image_20_Block">Картинка</text:p>
-   <text:p text:style-name="P19">Подпись к картинке</text:p>
+   <text:p text:style-name="P21">Подпись к картинке</text:p>
    <text:p text:style-name="Text">Предполагаемый вид примера</text:p>
    <text:p text:style-name="Horizontal_20_Line_20_for_20_Example"/>
-   <text:p text:style-name="P20">Описание примера</text:p>
+   <text:p text:style-name="P22">Описание примера</text:p>
    <text:p text:style-name="Horizontal_20_Line_20_for_20_Example"/>
   </office:text>
  </office:body>

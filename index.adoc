@@ -5,7 +5,8 @@ include::version.adoc[]
 "The principal task of a conductor is not to{nbsp}put himself in evidence but to disappear behind his{nbsp}functions"
 -- Liszt Ferenc
 
-.Fosdem'2026 talk materials
+.FOSDEM'2026 talk materials
+* https://github.com/fiddlededee/fosdem-printing[These materials source repository]
 * {gh-pages-url}/fosdem-printing-v{version}.html[Presentation in HTML]
 * {gh-pages-url}/fosdem-printing-animation-v{version}.pdf[Presentation in PDF with animation]
 * {gh-pages-url}/fosdem-printing-no-animation-v{version}.pdf[Presentation in PDF with no animation]
