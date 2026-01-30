@@ -49,7 +49,7 @@ import model.Table
 import model.Toc
 import writer.tableProperties
 
-version = "1.1.0"
+version = "1.1.1"
 val presentationFile = "fosdem-printing"
 
 buildscript {
@@ -457,12 +457,11 @@ fun makeTitle(titleSlideSection: Node): Node {
         val (fullName, bio, photo, contact, logo) =
             arrayOf("full-name", "bio", "title-photo", "contact", "logo")
                 .map { role -> titleSlideSection.descendant { it.roles.contains(role) }.first() }
-
+        // end::extracting-title-element[]
         logo.descendant { it is Image }.first().let { it as Image }
             .width = Length(1000F, LengthUnit.cmm)
         photo.descendant { it is Image }.first().let { it as Image }
             .width = Length(1500F, LengthUnit.cmm)
-        // end::extracting-title-element[]
         // tag::building-new-title[]
         appendChild(logo)
         appendChild(title)

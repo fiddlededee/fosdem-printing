@@ -373,7 +373,7 @@ children:
           sourceTagName: "p"
           children:
           - !<Text>
-            text: "And on the web we can just add horizontal scroll bar."
+            text: "And on the web we can just add horizontal scroll bar"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -2558,16 +2558,6 @@ children:
             sourceTagName: "p"
             children:
             - !<Text>
-              text: "99% generic writer"
-        - !<ListItem>
-          sourceTagName: "li"
-          roles:
-          - "fragment"
-          children:
-          - !<Paragraph>
-            sourceTagName: "p"
-            children:
-            - !<Text>
               text: "Good integration with CI/CD with a focus on homogeneity"
   - !<Build_gradle$HorizontalLine> {}
   - !<OpenBlock>
@@ -4450,498 +4440,6 @@ children:
             children:
             - !<Text>
               text: "}"
-          - !<Text>
-            text: "\n\n"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "n"
-            children:
-            - !<Text>
-              text: "logo"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "."
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nf"
-            children:
-            - !<Text>
-              text: "descendant"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "{"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "n"
-            children:
-            - !<Text>
-              text: "it"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "k"
-            children:
-            - !<Text>
-              text: "is"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nc"
-            children:
-            - !<Text>
-              text: "Image"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "}."
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nf"
-            children:
-            - !<Text>
-              text: "first"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "()."
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nf"
-            children:
-            - !<Text>
-              text: "let"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "{"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "n"
-            children:
-            - !<Text>
-              text: "it"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "k"
-            children:
-            - !<Text>
-              text: "as"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nc"
-            children:
-            - !<Text>
-              text: "Image"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "}"
-          - !<Text>
-            text: "\n    "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "."
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "n"
-            children:
-            - !<Text>
-              text: "width"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "="
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nc"
-            children:
-            - !<Text>
-              text: "Length"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "("
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "mf"
-            children:
-            - !<Text>
-              text: "1000F"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: ","
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nc"
-            children:
-            - !<Text>
-              text: "LengthUnit"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "."
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "n"
-            children:
-            - !<Text>
-              text: "cmm"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: ")"
-          - !<Text>
-            text: "\n"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "n"
-            children:
-            - !<Text>
-              text: "photo"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "."
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nf"
-            children:
-            - !<Text>
-              text: "descendant"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "{"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "n"
-            children:
-            - !<Text>
-              text: "it"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "k"
-            children:
-            - !<Text>
-              text: "is"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nc"
-            children:
-            - !<Text>
-              text: "Image"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "}."
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nf"
-            children:
-            - !<Text>
-              text: "first"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "()."
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nf"
-            children:
-            - !<Text>
-              text: "let"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "{"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "n"
-            children:
-            - !<Text>
-              text: "it"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "k"
-            children:
-            - !<Text>
-              text: "as"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nc"
-            children:
-            - !<Text>
-              text: "Image"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "}"
-          - !<Text>
-            text: "\n    "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "."
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "n"
-            children:
-            - !<Text>
-              text: "width"
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "="
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nc"
-            children:
-            - !<Text>
-              text: "Length"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "("
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "mf"
-            children:
-            - !<Text>
-              text: "1500F"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: ","
-          - !<Text>
-            text: " "
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "nc"
-            children:
-            - !<Text>
-              text: "LengthUnit"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: "."
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "n"
-            children:
-            - !<Text>
-              text: "cmm"
-          - !<Span>
-            sourceTagName: "span"
-            roles:
-            - "span"
-            - "p"
-            children:
-            - !<Text>
-              text: ")"
   - !<Build_gradle$HorizontalLine> {}
   - !<OpenBlock>
     sourceTagName: "aside"
@@ -4970,7 +4468,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "20. Rearranging title, constructing title"
+      text: "20. Rearranging/constructing title"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -5684,62 +5182,6 @@ children:
           text: "Rearranging looks like Slim (or XSLT) templates. Not so slim as Slim,\
             \ but definitely slimmer than XSLT"
 - !<OpenBlock>
-  id: "a309"
-  sourceTagName: "section"
-  children:
-  - !<Paragraph>
-    roles:
-    - "slide-finish"
-  - !<Heading>
-    sourceTagName: "h2"
-    level: 1
-    children:
-    - !<Text>
-      text: "21. Back return to the result"
-  - !<OpenBlock>
-    sourceTagName: "div"
-    roles:
-    - "imageblock"
-    children:
-    - !<Paragraph>
-      roles:
-      - "imageblock-paragraph"
-      children:
-      - !<Image>
-        src: "images/slide-1-to-print.png"
-        width:
-          value: 9860.0
-          unit: "cmm"
-        height:
-          value: 7028.7715
-          unit: "cmm"
-        anchorType: "ASCHAR"
-  - !<Build_gradle$HorizontalLine> {}
-  - !<OpenBlock>
-    sourceTagName: "aside"
-    roles:
-    - "notes"
-    children:
-    - !<OpenBlock>
-      sourceTagName: "div"
-      roles:
-      - "paragraph"
-      children:
-      - !<Paragraph>
-        sourceTagName: "p"
-        children:
-        - !<Text>
-          text: "An epigraph appeared from the second slide. You may look at "
-        - !<Span>
-          roles:
-          - "code"
-          children:
-          - !<Text>
-            text: "build.gradle.kts"
-        - !<Text>
-          text: " and find out how. But it is a very common task when we render printing\
-            \ version of a document"
-- !<OpenBlock>
   id: "a201"
   sourceTagName: "section"
   children:
@@ -5751,7 +5193,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "22. Styling"
+      text: "21. Styling"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -6640,9 +6082,65 @@ children:
         sourceTagName: "p"
         children:
         - !<Text>
-          text: "Programmable, but overrides only styling. As mentioned before UniDoc\
+          text: "Programmable, but overrides only styling. As mentioned before, UniDoc\
             \ Publisher doesn’t know about styling attributes, but it ensures the\
             \ structure of a style"
+- !<OpenBlock>
+  id: "a309"
+  sourceTagName: "section"
+  children:
+  - !<Paragraph>
+    roles:
+    - "slide-finish"
+  - !<Heading>
+    sourceTagName: "h2"
+    level: 1
+    children:
+    - !<Text>
+      text: "22. Back to the result"
+  - !<OpenBlock>
+    sourceTagName: "div"
+    roles:
+    - "imageblock"
+    children:
+    - !<Paragraph>
+      roles:
+      - "imageblock-paragraph"
+      children:
+      - !<Image>
+        src: "images/slide-1-to-print.png"
+        width:
+          value: 9860.0
+          unit: "cmm"
+        height:
+          value: 7028.7715
+          unit: "cmm"
+        anchorType: "ASCHAR"
+  - !<Build_gradle$HorizontalLine> {}
+  - !<OpenBlock>
+    sourceTagName: "aside"
+    roles:
+    - "notes"
+    children:
+    - !<OpenBlock>
+      sourceTagName: "div"
+      roles:
+      - "paragraph"
+      children:
+      - !<Paragraph>
+        sourceTagName: "p"
+        children:
+        - !<Text>
+          text: "An epigraph appeared from the second slide. You may look at "
+        - !<Span>
+          roles:
+          - "code"
+          children:
+          - !<Text>
+            text: "build.gradle.kts"
+        - !<Text>
+          text: " and find out how. But it is a very common task when we render printing\
+            \ version of a document"
 - !<OpenBlock>
   id: "a112"
   sourceTagName: "section"
@@ -8109,8 +7607,7 @@ children:
           sourceTagName: "p"
           children:
           - !<Text>
-            text: "One AST and one styling approach, but different styling API for\
-              \ each backend"
+            text: "One styling approach, but different styling API for each backend"
   - !<Build_gradle$HorizontalLine> {}
   - !<OpenBlock>
     sourceTagName: "aside"
@@ -8130,17 +7627,6 @@ children:
     - !<OpenBlock>
       sourceTagName: "div"
       roles:
-      - "paragraph"
-      children:
-      - !<Paragraph>
-        sourceTagName: "p"
-        children:
-        - !<Text>
-          text: "[REF] Styling implementation for other formats can be looked at in\
-            \ the UniDoc Publisher documentation sources"
-    - !<OpenBlock>
-      sourceTagName: "div"
-      roles:
       - "ulist"
       children:
       - !<UnorderedList>
@@ -8153,8 +7639,8 @@ children:
             sourceTagName: "p"
             children:
             - !<Text>
-              text: "Gradle + Kotlin stack is just a coincidence, where syntax, wide\
-                \ ecosystem and CI accidentally met"
+              text: "Gradle + Kotlin stack is just a coincidence, where clear syntax,\
+                \ wide ecosystem and CI accidentally met"
         - !<ListItem>
           sourceTagName: "li"
           children:
@@ -8179,6 +7665,17 @@ children:
             children:
             - !<Text>
               text: "Too much coincidence for coincidence?"
+    - !<OpenBlock>
+      sourceTagName: "div"
+      roles:
+      - "paragraph"
+      children:
+      - !<Paragraph>
+        sourceTagName: "p"
+        children:
+        - !<Text>
+          text: "[REF] Styling implementation for other formats can be looked at in\
+            \ the UniDoc Publisher documentation sources"
 - !<OpenBlock>
   id: "_conclusion"
   sourceTagName: "section"
@@ -8272,9 +7769,9 @@ children:
           sourceTagName: "p"
           children:
           - !<Anchor>
-            href: "https://github.com/fiddlededee/fosdem-printing/tree/main"
+            href: "https://github.com/fiddlededee/fosdem-printing"
             children:
             - !<Text>
-              text: "https://github.com/fiddlededee/fosdem-printing/tree/main"
+              text: "https://github.com/fiddlededee/fosdem-printing"
           - !<Text>
             text: ": this presentation repository"

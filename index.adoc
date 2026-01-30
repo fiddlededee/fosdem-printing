@@ -10,7 +10,7 @@ include::version.adoc[]
 * {gh-pages-url}/fosdem-printing-v{version}.html[Presentation in HTML]
 * {gh-pages-url}/fosdem-printing-animation-v{version}.pdf[Presentation in PDF with animation]
 * {gh-pages-url}/fosdem-printing-no-animation-v{version}.pdf[Presentation in PDF with no animation]
-* Notes for the presentation: {gh-pages-url}/fosdem-printing-notes-v1.0.1.pdf[PDF], {gh-pages-url}/fosdem-printing-notes-v1.0.1.docx[DOCX], {gh-pages-url}/fosdem-printing-notes-v1.0.1.odt[ODT], {gh-pages-url}/fosdem-printing-notes-v1.0.1.fodt[FODT]
+* Notes for the presentation: {gh-pages-url}/fosdem-printing-notes-v{version}.pdf[PDF], {gh-pages-url}/fosdem-printing-notes-v1.0.1.docx[DOCX], {gh-pages-url}/fosdem-printing-notes-v1.0.1.odt[ODT], {gh-pages-url}/fosdem-printing-notes-v1.0.1.fodt[FODT]
 
 .Available Gradle tasks
 include::tasks.adoc[]

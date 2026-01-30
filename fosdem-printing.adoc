@@ -70,7 +70,7 @@ In short, in a print format
 And how to copy?
 * With indents?
 Still impossible to copy from PDF
-* And on the web we can just add horizontal scroll bar.
+* And on the web we can just add horizontal scroll bar
 
 [%step]
 WARNING: There is a core mismatch: semantic markup meets the rigid world of print
@@ -309,7 +309,6 @@ TIP: At this point, it became clear that the approach could be improved at an ar
 * Native converter as a reader
 * Sound ways of transforming AST
 * A good approach for styling as a separate focus
-* 99% generic writer
 * Good integration with CI/CD with a focus on homogeneity
 --
 
@@ -407,7 +406,7 @@ Looks like XPath but once again typed, navigable, and testable
 --
 
 [[a110]]
-== Rearranging title, constructing title
+== Rearranging/constructing title
 
 [source,kotlin,indent=0]
 ----
@@ -419,15 +418,6 @@ include::build.gradle.kts[tag=building-new-title]
 Rearranging looks like Slim (or XSLT) templates. Not so slim as Slim, but definitely slimmer than XSLT
 --
 
-[[a309]]
-== Back return to the result
-
-image::images/slide-1-to-print.png[width=58%]
-
-[.notes]
---
-An epigraph appeared from the second slide. You may look at `build.gradle.kts` and find out how. But it is a very common task when we render printing version of a document
---
 
 [[a201]]
 == Styling
@@ -439,7 +429,17 @@ include::build.gradle.kts[tag=title-page-styles]
 
 [.notes]
 --
-Programmable, but overrides only styling. As mentioned before UniDoc Publisher doesn't know about styling attributes, but it ensures the structure of a style
+Programmable, but overrides only styling. As mentioned before, UniDoc Publisher doesn't know about styling attributes, but it ensures the structure of a style
+--
+
+[[a309]]
+== Back to the result
+
+image::images/slide-1-to-print.png[width=58%]
+
+[.notes]
+--
+An epigraph appeared from the second slide. You may look at `build.gradle.kts` and find out how. But it is a very common task when we render printing version of a document
 --
 
 [[a112]]
@@ -503,18 +503,18 @@ By the way, these snippets can be put into documentation. These are real cases o
 * No declarations, everything should be programmed
 * Typed AST -- check before run
 * Clean and testable code
-* One AST and one styling approach, but different styling API for each backend
+* One styling approach, but different styling API for each backend
 
 [.notes]
 --
 Once again about focus and trade-offs, but after the demo
 
-[REF] Styling implementation for other formats can be looked at in the UniDoc Publisher documentation sources
-
-* Gradle + Kotlin stack is just a coincidence, where syntax, wide ecosystem and CI accidentally met
+* Gradle + Kotlin stack is just a coincidence, where clear syntax, wide ecosystem and CI accidentally met
 * Still more coincidence -- they met Asciidoctor
 * Still more coincidence -- they met LibreOffice API
 * Too much coincidence for coincidence?
+
+[REF] Styling implementation for other formats can be looked at in the UniDoc Publisher documentation sources
 --
 
 == Conclusion
@@ -527,5 +527,5 @@ Once again about focus and trade-offs, but after the demo
 == Questions?
 
 * https://github.com/fiddlededee/unidoc-publisher: UniDoc Publisher -- any markup to any printing rendering engine
-* https://github.com/fiddlededee/fosdem-printing/tree/main: this presentation repository
+* https://github.com/fiddlededee/fosdem-printing: this presentation repository
 

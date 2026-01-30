@@ -750,7 +750,7 @@ pre.rouge {
         <li class="fragment">
          <p>With indents? Still impossible to copy from PDF</p></li>
         <li class="fragment">
-         <p>And on the web we can just add horizontal scroll bar.</p></li>
+         <p>And on the web we can just add horizontal scroll bar</p></li>
        </ul>
       </div>
       <div class="admonitionblock warning fragment">
@@ -1238,8 +1238,6 @@ pre.rouge {
           <li class="fragment">
            <p>A good approach for styling as a separate focus</p></li>
           <li class="fragment">
-           <p>99% generic writer</p></li>
-          <li class="fragment">
            <p>Good integration with CI/CD with a focus on homogeneity</p></li>
          </ul>
         </div>
@@ -1431,12 +1429,7 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
 <span class="kd">val</span> <span class="py">notes</span> <span class="p">=</span> <span class="n">titleSlideSection</span><span class="p">.</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">sourceTagName</span> <span class="p">==</span> <span class="s">"aside"</span> <span class="p">}.</span><span class="nf">first</span><span class="p">()</span>
 <span class="kd">val</span> <span class="p">(</span><span class="py">fullName</span><span class="p">,</span> <span class="py">bio</span><span class="p">,</span> <span class="py">photo</span><span class="p">,</span> <span class="py">contact</span><span class="p">,</span> <span class="py">logo</span><span class="p">)</span> <span class="p">=</span>
     <span class="nf">arrayOf</span><span class="p">(</span><span class="s">"full-name"</span><span class="p">,</span> <span class="s">"bio"</span><span class="p">,</span> <span class="s">"title-photo"</span><span class="p">,</span> <span class="s">"contact"</span><span class="p">,</span> <span class="s">"logo"</span><span class="p">)</span>
-        <span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="n">role</span> <span class="p">-&gt;</span> <span class="n">titleSlideSection</span><span class="p">.</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">roles</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">role</span><span class="p">)</span> <span class="p">}.</span><span class="nf">first</span><span class="p">()</span> <span class="p">}</span>
-
-<span class="n">logo</span><span class="p">.</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span> <span class="k">is</span> <span class="nc">Image</span> <span class="p">}.</span><span class="nf">first</span><span class="p">().</span><span class="nf">let</span> <span class="p">{</span> <span class="n">it</span> <span class="k">as</span> <span class="nc">Image</span> <span class="p">}</span>
-    <span class="p">.</span><span class="n">width</span> <span class="p">=</span> <span class="nc">Length</span><span class="p">(</span><span class="mf">1000F</span><span class="p">,</span> <span class="nc">LengthUnit</span><span class="p">.</span><span class="n">cmm</span><span class="p">)</span>
-<span class="n">photo</span><span class="p">.</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span> <span class="k">is</span> <span class="nc">Image</span> <span class="p">}.</span><span class="nf">first</span><span class="p">().</span><span class="nf">let</span> <span class="p">{</span> <span class="n">it</span> <span class="k">as</span> <span class="nc">Image</span> <span class="p">}</span>
-    <span class="p">.</span><span class="n">width</span> <span class="p">=</span> <span class="nc">Length</span><span class="p">(</span><span class="mf">1500F</span><span class="p">,</span> <span class="nc">LengthUnit</span><span class="p">.</span><span class="n">cmm</span><span class="p">)</span></code></pre>
+        <span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="n">role</span> <span class="p">-&gt;</span> <span class="n">titleSlideSection</span><span class="p">.</span><span class="nf">descendant</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">roles</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">role</span><span class="p">)</span> <span class="p">}.</span><span class="nf">first</span><span class="p">()</span> <span class="p">}</span></code></pre>
        </div>
       </div>
       <aside class="notes">
@@ -1452,7 +1445,7 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
      </div>
     </section>
     <section id="a110">
-     <h2>Rearranging title, constructing title</h2>
+     <h2>Rearranging/constructing title</h2>
      <div class="slide-content">
       <div class="listingblock">
        <div class="content">
@@ -1485,24 +1478,6 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
       </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
      </div>
     </section>
-    <section id="a309">
-     <h2>Back return to the result</h2>
-     <div class="slide-content">
-      <div class="imageblock">
-       <img src="images/slide-1-to-print.png" alt="slide 1 to print" width="58%">
-      </div>
-      <aside class="notes">
-       <div class="paragraph">
-        <p>An epigraph appeared from the second slide. You may look at <code>build.gradle.kts</code> and find out how. But it is a very common task when we render printing version of a document</p>
-       </div>
-      </aside>
-     </div>
-     <div class="twd1">
-      <div>
-       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
-      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
-     </div>
-    </section>
     <section id="a201">
      <h2>Styling</h2>
      <div class="slide-content">
@@ -1525,7 +1500,25 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
       </div>
       <aside class="notes">
        <div class="paragraph">
-        <p>Programmable, but overrides only styling. As mentioned before UniDoc Publisher doesn’t know about styling attributes, but it ensures the structure of a style</p>
+        <p>Programmable, but overrides only styling. As mentioned before, UniDoc Publisher doesn’t know about styling attributes, but it ensures the structure of a style</p>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a309">
+     <h2>Back to the result</h2>
+     <div class="slide-content">
+      <div class="imageblock">
+       <img src="images/slide-1-to-print.png" alt="slide 1 to print" width="58%">
+      </div>
+      <aside class="notes">
+       <div class="paragraph">
+        <p>An epigraph appeared from the second slide. You may look at <code>build.gradle.kts</code> and find out how. But it is a very common task when we render printing version of a document</p>
        </div>
       </aside>
      </div>
@@ -1657,20 +1650,17 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
         <li class="fragment">
          <p>Clean and testable code</p></li>
         <li class="fragment">
-         <p>One AST and one styling approach, but different styling API for each backend</p></li>
+         <p>One styling approach, but different styling API for each backend</p></li>
        </ul>
       </div>
       <aside class="notes">
        <div class="paragraph">
         <p>Once again about focus and trade-offs, but after the demo</p>
        </div>
-       <div class="paragraph">
-        <p>[REF] Styling implementation for other formats can be looked at in the UniDoc Publisher documentation sources</p>
-       </div>
        <div class="ulist">
         <ul>
          <li>
-          <p>Gradle + Kotlin stack is just a coincidence, where syntax, wide ecosystem and CI accidentally met</p></li>
+          <p>Gradle + Kotlin stack is just a coincidence, where clear syntax, wide ecosystem and CI accidentally met</p></li>
          <li>
           <p>Still more coincidence — they met Asciidoctor</p></li>
          <li>
@@ -1678,6 +1668,9 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
          <li>
           <p>Too much coincidence for coincidence?</p></li>
         </ul>
+       </div>
+       <div class="paragraph">
+        <p>[REF] Styling implementation for other formats can be looked at in the UniDoc Publisher documentation sources</p>
        </div>
       </aside>
      </div>
@@ -1715,7 +1708,7 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
         <li>
          <p><a href="https://github.com/fiddlededee/unidoc-publisher" class="bare">https://github.com/fiddlededee/unidoc-publisher</a>: UniDoc Publisher — any markup to any printing rendering engine</p></li>
         <li>
-         <p><a href="https://github.com/fiddlededee/fosdem-printing/tree/main" class="bare">https://github.com/fiddlededee/fosdem-printing/tree/main</a>: this presentation repository</p></li>
+         <p><a href="https://github.com/fiddlededee/fosdem-printing" class="bare">https://github.com/fiddlededee/fosdem-printing</a>: this presentation repository</p></li>
        </ul>
       </div>
      </div>
