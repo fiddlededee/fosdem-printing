@@ -767,7 +767,7 @@ pre.rouge {
        <div class="ulist">
         <ul>
          <li>
-          <p>Take a simple listing…​ (go through very briefly just to give filling)</p>
+          <p>Take a simple listing…​ (go through very briefly just to give some feeling)</p>
           <div class="ulist">
            <ul>
             <li>
@@ -777,7 +777,7 @@ pre.rouge {
          <li>
           <p>The goal of this talk is to show an approach to tackling such problems</p></li>
          <li>
-          <p>This talk is aimed at engineers who automate documentation and need reliable print output</p></li>
+          <p>This talk is aimed at engineers who automate documentation and need a reliable print output</p></li>
         </ul>
        </div>
       </aside>
@@ -1333,7 +1333,7 @@ pre.rouge {
     <span class="nf">adaptWith</span><span class="p">(</span><span class="nc">AsciidoctorOdAdapter</span><span class="p">)</span>
     <span class="n">unknownTagProcessingRule</span> <span class="p">=</span> <span class="nf">unknownTagProcessingRuleRevealJs</span><span class="p">()</span>
     <span class="nf">parse</span><span class="p">()</span>
-            <span class="c1">// Processing AST</span>
+            <span class="c1">// Processing AST and styling</span>
     <span class="nf">ast2fodt</span><span class="p">()</span>
 <span class="p">}</span></code></pre>
        </div>
@@ -1348,6 +1348,47 @@ pre.rouge {
          <li>
           <p>The boilerplate is quite minimalistic</p></li>
         </ul>
+       </div>
+      </aside>
+     </div>
+     <div class="twd1">
+      <div>
+       Why our HTML Docs Don’t Just Print and&nbsp;What to Do About It
+      </div><img src="images/fosdem-logo.svg" alt="TechWriter Days #1" class="tw-days">
+     </div>
+    </section>
+    <section id="a601">
+     <h2>With no custom transformations and styling</h2>
+     <div class="slide-content">
+      <div class="imageblock">
+       <img src="images/no-transformations.png" alt="no transformations" width="58%">
+      </div>
+      <aside class="notes">
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>[REF] CSS styles are not automatically applied: in many cases it is not possible and sometimes simply unnecessary. This results in ugly image sizes, no code highlighting, no special styling for notes</p></li>
+         <li>
+          <p>[REF] No Epigraph. I just forgot to implement quoted element in the standard Asciidoctor adapter</p></li>
+         <li>
+          <p>[REF] Unnecessary Header on a first page. The reason is that First page style is not automatically applied to the first paragraph</p></li>
+        </ul>
+       </div>
+       <div class="admonitionblock tip">
+        <table>
+         <tbody>
+          <tr>
+           <td class="icon"><i class="fa fa-lightbulb-o" title="Tip"></i></td>
+           <td class="content">
+            <div class="paragraph">
+             <p>UniDoc Publisher is a library for building converters. It doesn’t aim to produce a good-looking document out of the box, it aims at reducing effort required to design your own converter</p>
+            </div>
+            <div class="paragraph">
+             <p>Still, the result is more or less readable</p>
+            </div></td>
+          </tr>
+         </tbody>
+        </table>
        </div>
       </aside>
      </div>
@@ -1620,13 +1661,13 @@ icon:envelope[] consulting@yandex.ru icon:telegram[]{nbsp}@nmpotashnikoff
       </div>
       <aside class="notes">
        <div class="paragraph">
-        <p>If we have Asciidoctor with some Printing converter platform on top and Converter on top, we should be sure, that minor changes won’t break anything</p>
+        <p>If we have Asciidoctor with some Printing converter platform on top and our Custom converter on top of the top, and some LibreOffice on top of the top of the top we should be sure, that minor changes won’t break anything</p>
        </div>
        <div class="paragraph">
-        <p>I use the system of snippets, render them into PNG and compare by pixels with reference. Almost 100% guarantee.</p>
+        <p>I use the system of snippets, render them into PNG and compare by pixels with reference. Almost 100% guarantee</p>
        </div>
        <div class="paragraph">
-        <p>By the way, these snippets can be put into documentation. These are real cases of usage.</p>
+        <p>By the way, these snippets can be put into documentation. These are real cases of usage</p>
        </div>
       </aside>
      </div>

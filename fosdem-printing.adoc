@@ -11,10 +11,10 @@
 :revealjs_transition: none
 :revealjs_width: 1600
 :revealjs_height: 900
-:icons: font
 :figure-caption!:
 :example-caption!:
 :table-caption!:
+:icons: font
 
 [.title-footer]
 [cols="260,1100,320"]
@@ -77,11 +77,11 @@ WARNING: There is a core mismatch: semantic markup meets the rigid world of prin
 
 [.notes]
 --
-* Take a simple listing... (go through very briefly just to give filling)
+* Take a simple listing... (go through very briefly just to give some feeling)
 ** Stop on orientation -- it is already not about semantic markup. Landscape for listing, for section, for higher level section?
 Should tech writer use media hints?
 * The goal of this talk is to show an approach to tackling such problems
-* This talk is aimed at engineers who automate documentation and need reliable print output
+* This talk is aimed at engineers who automate documentation and need a reliable print output
 --
 
 
@@ -134,7 +134,6 @@ These technologies are not aligned in a great number of details like:
 * LO Writer doesn't support typography (like keep with next) within table cells
 * Microsoft doesn't recommend running automation tasks (like saving PDF) on a server
 ====
-
 
 [.notes]
 --
@@ -353,7 +352,7 @@ This presentation is created with Asciidoctor Reveal.js, so we can convert it to
 [source,kotlin,indent=0]
 ----
 include::build.gradle.kts[tag=boiler-plate]
-                // Processing AST
+                // Processing AST and styling
 include::build.gradle.kts[tag=boiler-plate-2]
 ----
 
@@ -362,6 +361,25 @@ include::build.gradle.kts[tag=boiler-plate-2]
 * Asciidoctor is a part of a Gradle build
 * The project starts not from Asciidoctor HTML, but from Reveal.js Asciidoctor HTML to make notes contents closer to slides and as a proof of concept. The technology has a safety margin against any HTML: Asciidoc HTML, Asciidoc Reveal.js HTML, MD, Wiki, ReST...
 * The boilerplate is quite minimalistic
+--
+
+[[a601]]
+== With no custom transformations and styling
+
+image::images/no-transformations.png[width=58%]
+
+[.notes]
+--
+* [REF] CSS styles are not automatically applied: in many cases it is not possible and sometimes simply unnecessary. This results in ugly image sizes, no code highlighting, no special styling for notes
+* [REF] No Epigraph. I just forgot to implement quoted element in the standard Asciidoctor adapter
+* [REF] Unnecessary Header on a first page. The reason is that First page style is not automatically applied to the first paragraph
+
+[TIP]
+====
+UniDoc Publisher is a library for building converters. It doesn't aim to produce a good-looking document out of the box, it  aims at reducing effort required to design your own converter
+
+Still, the result is more or less readable
+====
 --
 
 [[a107]]
@@ -488,12 +506,12 @@ image::images/approval.png[width=100%]
 
 [.notes]
 --
-If we have Asciidoctor with some Printing converter platform on top and Converter on top, we should be sure, that minor changes won't break anything
+If we have Asciidoctor with some Printing converter platform on top and our Custom converter on top of the top, and some LibreOffice on top of the top of the top we should be sure, that minor changes won't break anything
 
 I use the system of snippets, render them into PNG and compare by pixels with reference.
-Almost 100% guarantee.
+Almost 100% guarantee
 
-By the way, these snippets can be put into documentation. These are real cases of usage.
+By the way, these snippets can be put into documentation. These are real cases of usage
 --
 
 == Focus and trade-offs

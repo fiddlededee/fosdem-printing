@@ -49,7 +49,7 @@ import model.Table
 import model.Toc
 import writer.tableProperties
 
-version = "1.1.1"
+version = "1.1.2"
 val presentationFile = "fosdem-printing"
 
 buildscript {

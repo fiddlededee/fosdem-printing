@@ -441,7 +441,7 @@ children:
             children:
             - !<Text>
               text: "Take a simple listing…​ (go through very briefly just to give\
-                \ filling)"
+                \ some feeling)"
           - !<OpenBlock>
             sourceTagName: "div"
             roles:
@@ -477,7 +477,7 @@ children:
             children:
             - !<Text>
               text: "This talk is aimed at engineers who automate documentation and\
-                \ need reliable print output"
+                \ need a reliable print output"
 - !<OpenBlock>
   id: "a300"
   sourceTagName: "section"
@@ -3097,7 +3097,7 @@ children:
             - "c1"
             children:
             - !<Text>
-              text: "// Processing AST"
+              text: "// Processing AST and styling"
           - !<Text>
             text: "\n    "
           - !<Span>
@@ -3168,6 +3168,142 @@ children:
             - !<Text>
               text: "The boilerplate is quite minimalistic"
 - !<OpenBlock>
+  id: "a601"
+  sourceTagName: "section"
+  children:
+  - !<Paragraph>
+    roles:
+    - "slide-finish"
+  - !<Heading>
+    sourceTagName: "h2"
+    level: 1
+    children:
+    - !<Text>
+      text: "17. With no custom transformations and styling"
+  - !<OpenBlock>
+    sourceTagName: "div"
+    roles:
+    - "imageblock"
+    children:
+    - !<Paragraph>
+      roles:
+      - "imageblock-paragraph"
+      children:
+      - !<Image>
+        src: "images/no-transformations.png"
+        width:
+          value: 9860.0
+          unit: "cmm"
+        height:
+          value: 6926.6494
+          unit: "cmm"
+        anchorType: "ASCHAR"
+  - !<Build_gradle$HorizontalLine> {}
+  - !<OpenBlock>
+    sourceTagName: "aside"
+    roles:
+    - "notes"
+    children:
+    - !<OpenBlock>
+      sourceTagName: "div"
+      roles:
+      - "ulist"
+      children:
+      - !<UnorderedList>
+        sourceTagName: "ul"
+        children:
+        - !<ListItem>
+          sourceTagName: "li"
+          children:
+          - !<Paragraph>
+            sourceTagName: "p"
+            children:
+            - !<Text>
+              text: "[REF] CSS styles are not automatically applied: in many cases\
+                \ it is not possible and sometimes simply unnecessary. This results\
+                \ in ugly image sizes, no code highlighting, no special styling for\
+                \ notes"
+        - !<ListItem>
+          sourceTagName: "li"
+          children:
+          - !<Paragraph>
+            sourceTagName: "p"
+            children:
+            - !<Text>
+              text: "[REF] No Epigraph. I just forgot to implement quoted element\
+                \ in the standard Asciidoctor adapter"
+        - !<ListItem>
+          sourceTagName: "li"
+          children:
+          - !<Paragraph>
+            sourceTagName: "p"
+            children:
+            - !<Text>
+              text: "[REF] Unnecessary Header on a first page. The reason is that\
+                \ First page style is not automatically applied to the first paragraph"
+    - !<OpenBlock>
+      sourceTagName: "div"
+      roles:
+      - "admonitionblock"
+      - "tip"
+      children:
+      - !<Table>
+        children:
+        - !<Col>
+          width:
+            value: 100.0
+            unit: "perc"
+        - !<TableRowGroup>
+          type: "body"
+          children:
+          - !<TableRow>
+            children:
+            - !<TableCell>
+              sourceTagName: "td"
+              roles:
+              - "icon"
+              - "admonition-type-content"
+              colspan: 1
+              rowspan: 1
+              children:
+              - !<Paragraph>
+                children:
+                - !<Text>
+                  text: "Tip"
+          - !<TableRow>
+            children:
+            - !<TableCell>
+              sourceTagName: "td"
+              roles:
+              - "content"
+              - "admonition-content"
+              colspan: 1
+              rowspan: 1
+              children:
+              - !<OpenBlock>
+                sourceTagName: "div"
+                roles:
+                - "paragraph"
+                children:
+                - !<Paragraph>
+                  sourceTagName: "p"
+                  children:
+                  - !<Text>
+                    text: "UniDoc Publisher is a library for building converters.\
+                      \ It doesn’t aim to produce a good-looking document out of the\
+                      \ box, it  aims at reducing effort required to design your own\
+                      \ converter"
+              - !<OpenBlock>
+                sourceTagName: "div"
+                roles:
+                - "paragraph"
+                children:
+                - !<Paragraph>
+                  sourceTagName: "p"
+                  children:
+                  - !<Text>
+                    text: "Still, the result is more or less readable"
+- !<OpenBlock>
   id: "a107"
   sourceTagName: "section"
   children:
@@ -3179,7 +3315,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "17. Processing AST"
+      text: "18. Processing AST"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -3642,7 +3778,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "18. Rearranging title (Asciidoc source)"
+      text: "19. Rearranging title (Asciidoc source)"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -3696,7 +3832,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "19. Rearranging title, extracting semantics"
+      text: "20. Rearranging title, extracting semantics"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -4468,7 +4604,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "20. Rearranging/constructing title"
+      text: "21. Rearranging/constructing title"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -5193,7 +5329,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "21. Styling"
+      text: "22. Styling"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -6097,7 +6233,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "22. Back to the result"
+      text: "23. Back to the result"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -6153,7 +6289,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "23. Some more AST processing"
+      text: "24. Some more AST processing"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -6937,7 +7073,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "24. Extending AST"
+      text: "25. Extending AST"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -7477,7 +7613,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "25. Testing"
+      text: "26. Testing"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -7512,8 +7648,9 @@ children:
         children:
         - !<Text>
           text: "If we have Asciidoctor with some Printing converter platform on top\
-            \ and Converter on top, we should be sure, that minor changes won’t break\
-            \ anything"
+            \ and our Custom converter on top of the top, and some LibreOffice on\
+            \ top of the top of the top we should be sure, that minor changes won’\
+            t break anything"
     - !<OpenBlock>
       sourceTagName: "div"
       roles:
@@ -7524,7 +7661,7 @@ children:
         children:
         - !<Text>
           text: "I use the system of snippets, render them into PNG and compare by\
-            \ pixels with reference.\nAlmost 100% guarantee."
+            \ pixels with reference.\nAlmost 100% guarantee"
     - !<OpenBlock>
       sourceTagName: "div"
       roles:
@@ -7535,7 +7672,7 @@ children:
         children:
         - !<Text>
           text: "By the way, these snippets can be put into documentation. These are\
-            \ real cases of usage."
+            \ real cases of usage"
 - !<OpenBlock>
   id: "_focus_and_trade_offs"
   sourceTagName: "section"
@@ -7548,7 +7685,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "26. Focus and trade-offs"
+      text: "27. Focus and trade-offs"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -7688,7 +7825,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "27. Conclusion"
+      text: "28. Conclusion"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
@@ -7740,7 +7877,7 @@ children:
     level: 1
     children:
     - !<Text>
-      text: "28. Questions?"
+      text: "29. Questions?"
   - !<OpenBlock>
     sourceTagName: "div"
     roles:
